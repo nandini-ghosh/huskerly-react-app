@@ -25,7 +25,7 @@ function App() {
 
   const handleClick = async () => {
     try {
-      const response = await fetch('https://cors-anywhere.herokuapp.com/https://http.cat/102');
+      const response = await fetch('https://http.cat/102');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
