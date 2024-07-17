@@ -21,9 +21,6 @@
   function App() {
     return (
       <div className="App">
-        <header className="App-header">
-            <h1>Welcome to Huskerly! </h1>
-          </header>
         <Authenticator>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
