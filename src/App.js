@@ -1,5 +1,6 @@
 import logo from './logo-husky.png';
 import './App.css';
+import cors from "cors";
 import { useState } from 'react';
 
 // Imports the Amplify library from 'aws-amplify' package. This is used to configure your app to interact with AWS services.
@@ -24,7 +25,7 @@ function App() {
 
   const handleClick = async () => {
     try {
-      const response = await fetch('https://http.cat/[102]');
+      const response = await fetch('https://cors-anywhere.herokuapp.com/https://http.cat/102');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
