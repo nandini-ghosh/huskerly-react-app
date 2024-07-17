@@ -24,7 +24,7 @@ function App() {
 
   const handleClick = async () => {
     try {
-      const response = await fetch('http://a56c3c3211c8f4c2186827ee5d55fc32-b2e6adb7382a3393.elb.us-east-2.amazonaws.com/');
+      const response = await fetch('https://http.cat/[102]');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
