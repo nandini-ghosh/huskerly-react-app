@@ -25,7 +25,7 @@ function App() {
 
   const handleClick = async () => {
     try {
-      const response = await fetch('https://http.cat/102');
+      const response = await fetch('https://zi56v3r5xl.execute-api.us-east-2.amazonaws.com/');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Authenticator> */}
+      <Authenticator>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>Huskerly</h1>
@@ -50,15 +50,12 @@ function App() {
           <button className='button-red' onClick={handleClick}>See message</button>
           <div>{data && JSON.stringify(data)}</div>
         </header>
-      {/* </Authenticator> */}
+      </Authenticator>
     </div>
   );
 }
 
-// export default withAuthenticator(App);
-
-export default App;
-
+export default withAuthenticator(App);
 
 
 
