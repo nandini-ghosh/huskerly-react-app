@@ -21,6 +21,20 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "API Gateway"
+    },
+    "testapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "testlambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
     }
   },
   "auth": {
@@ -57,7 +71,8 @@
           "attributes": [
             "UserPoolId",
             "AppClientIDWeb",
-            "AppClientID"
+            "AppClientID",
+            "IdentityPoolId"
           ],
           "category": "auth",
           "resourceName": "HuskerlyCognitoService"
@@ -86,6 +101,72 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_AdminQueries0090edc7_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueries0090edc7"
+        }
+      ]
+    },
+    "AMPLIFY_function_AdminQueries0090edc7_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueries0090edc7"
+        }
+      ]
+    },
+    "AMPLIFY_function_testlambda_dbHost": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testlambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_testlambda_dbName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testlambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_testlambda_dbPassword": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testlambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_testlambda_dbUser": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testlambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_testlambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testlambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_testlambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testlambda"
+        }
+      ]
     }
   }
 }

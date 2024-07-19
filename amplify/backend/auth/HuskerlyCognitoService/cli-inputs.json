@@ -1,6 +1,8 @@
 {
   "version": "1",
   "cognitoConfig": {
+    "identityPoolName": "HuskerlyCognitoService_identitypool_060d440d",
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "husker401aedd9",
     "userPoolName": "Huskies",
     "autoVerifiedAttributes": [
@@ -34,7 +36,7 @@
     "userpoolClientSetAttributes": false,
     "sharedId": "401aedd9",
     "resourceName": "HuskerlyCognitoService",
-    "authSelections": "userPoolOnly",
+    "authSelections": "identityPoolAndUserPool",
     "useDefault": "manual",
     "usernameAttributes": [
       "email"

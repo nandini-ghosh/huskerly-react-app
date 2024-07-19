@@ -20,10 +20,50 @@
         "AdminQueries0090edc7": {
           "deploymentBucketName": "amplify-huskerlyreactapp-dev-dbc2e-deployment",
           "s3Key": "amplify-builds/AdminQueries0090edc7-785144666735682b5956-build.zip"
-        }
+        },
+        "testlambda": {},
+        "HuskerlyCognitoService": {}
       },
       "api": {
         "AdminQueries": {}
+      }
+    }
+  },
+  "huskyenv": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-huskerlyreactapp-huskyenv-c1024-authRole",
+      "UnauthRoleArn": "arn:aws:iam::058264409130:role/amplify-huskerlyreactapp-huskyenv-c1024-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::058264409130:role/amplify-huskerlyreactapp-huskyenv-c1024-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-huskerlyreactapp-huskyenv-c1024-deployment",
+      "UnauthRoleName": "amplify-huskerlyreactapp-huskyenv-c1024-unauthRole",
+      "StackName": "amplify-huskerlyreactapp-huskyenv-c1024",
+      "StackId": "arn:aws:cloudformation:us-east-1:058264409130:stack/amplify-huskerlyreactapp-huskyenv-c1024/de564ec0-45da-11ef-bd09-0e4075a57531",
+      "AmplifyAppId": "d3toe6bm7diti5"
+    },
+    "categories": {
+      "auth": {
+        "HuskerlyCognitoService": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries0090edc7": {
+          "deploymentBucketName": "amplify-huskerlyreactapp-huskyenv-c1024-deployment",
+          "s3Key": "amplify-builds/AdminQueries0090edc7-785144666735682b5956-build.zip"
+        },
+        "testlambda": {
+          "dbHost": "proxy-1721309360289-huskerlydatabase1.proxy-che2wqk4qebu.us-east-2.rds.amazonaws.com",
+          "dbName": "huskerlydatabase",
+          "dbPassword": "huskerlyadmin",
+          "dbUser": "huskerlyadmin",
+          "deploymentBucketName": "amplify-huskerlyreactapp-huskyenv-c1024-deployment",
+          "s3Key": "amplify-builds/testlambda-56384667464b37655842-build.zip"
+        },
+        "HuskerlyCognitoService": {}
+      },
+      "api": {
+        "AdminQueries": {},
+        "testapi": {}
       }
     }
   }
