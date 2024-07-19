@@ -143,30 +143,7 @@
           "resourceName": "testInsertUser"
         }
       ]
-    },
-    "AMPLIFY_storage_huskerlyreactappfb280dfb_bucketName": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "huskerlyreactappfb280dfb"
-        }
-      ]
-    },
-    "AMPLIFY_storage_huskerlyreactappfb280dfb_region": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "huskerlyreactappfb280dfb"
-        }
-      ]
     }
   },
-  "storage": {
-    "huskerlyreactappfb280dfb": {
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "S3",
-      "serviceType": "imported"
-    }
-  }
+  "storage": {}
 }

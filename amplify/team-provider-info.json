@@ -12,12 +12,6 @@
       "AmplifyAppId": "d2a8ctqnn4cl7u"
     },
     "categories": {
-      "storage": {
-        "huskerlyreactappfb280dfb": {
-          "bucketName": "huskerly",
-          "region": "us-east-2"
-        }
-      },
       "auth": {
         "huskerlyreactapp54522af7": {}
       },
@@ -29,7 +23,7 @@
           "dbUser": "huskerlyadmin",
           "secretsPathAmplifyAppId": "d2a8ctqnn4cl7u",
           "deploymentBucketName": "amplify-huskerlyreactapp-husky-6bb01-deployment",
-          "s3Key": "amplify-builds/testInsertUser-7175734e78512b663055-build.zip"
+          "s3Key": "amplify-builds/testInsertUser-74755a4a392f6b464455-build.zip"
         }
       },
       "api": {
