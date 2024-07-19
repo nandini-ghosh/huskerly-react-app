@@ -57,7 +57,7 @@
           "dbPassword": "huskerlyadmin",
           "dbUser": "huskerlyadmin",
           "deploymentBucketName": "amplify-huskerlyreactapp-huskyenv-c1024-deployment",
-          "s3Key": "amplify-builds/testlambda-56384667464b37655842-build.zip"
+          "s3Key": "amplify-builds/testlambda-533537634d4b716f3969-build.zip"
         },
         "HuskerlyCognitoService": {}
       },
