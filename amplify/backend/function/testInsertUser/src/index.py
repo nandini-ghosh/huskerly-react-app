@@ -1,6 +1,7 @@
 import json
 import os
 import psycopg2
+from dotenv import load_dotenv
 
 
 def connect_to_database():
@@ -51,3 +52,14 @@ def handler(event, context):
         },
         'body': json.dumps('Hello from your new Amplify Python lambda!')
     }
+
+
+load_dotenv()
+
+# Mock event and context
+event = {}
+context = {}
+
+# Invoke the handler
+response = handler(event, context)
+print(response)
