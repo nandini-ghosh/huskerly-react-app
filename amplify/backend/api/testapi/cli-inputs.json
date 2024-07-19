@@ -3,7 +3,7 @@
   "paths": {
     "/users": {
       "name": "/users",
-      "lambdaFunction": "testlambda",
+      "lambdaFunction": "testInsertUser",
       "permissions": {
         "setting": "open"
       }

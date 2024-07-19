@@ -1,69 +1,34 @@
 {
-  "dev": {
+  "husky": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-huskerlyreactapp-dev-dbc2e-authRole",
-      "UnauthRoleArn": "arn:aws:iam::058264409130:role/amplify-huskerlyreactapp-dev-dbc2e-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::058264409130:role/amplify-huskerlyreactapp-dev-dbc2e-authRole",
+      "AuthRoleName": "amplify-huskerlyreactapp-husky-6bb01-authRole",
+      "UnauthRoleArn": "arn:aws:iam::058264409130:role/amplify-huskerlyreactapp-husky-6bb01-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::058264409130:role/amplify-huskerlyreactapp-husky-6bb01-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-huskerlyreactapp-dev-dbc2e-deployment",
-      "UnauthRoleName": "amplify-huskerlyreactapp-dev-dbc2e-unauthRole",
-      "StackName": "amplify-huskerlyreactapp-dev-dbc2e",
-      "StackId": "arn:aws:cloudformation:us-east-2:058264409130:stack/amplify-huskerlyreactapp-dev-dbc2e/5d9c0ae0-43af-11ef-8ba7-069f966f1335",
-      "AmplifyAppId": "d10sqd5mufnpgq"
+      "DeploymentBucketName": "amplify-huskerlyreactapp-husky-6bb01-deployment",
+      "UnauthRoleName": "amplify-huskerlyreactapp-husky-6bb01-unauthRole",
+      "StackName": "amplify-huskerlyreactapp-husky-6bb01",
+      "StackId": "arn:aws:cloudformation:us-east-2:058264409130:stack/amplify-huskerlyreactapp-husky-6bb01/59b60f20-4454-11ef-88ed-06940b4b74cf",
+      "AmplifyAppId": "d2a8ctqnn4cl7u"
     },
     "categories": {
+      "storage": {
+        "huskerlyreactappfb280dfb": {
+          "bucketName": "huskerly",
+          "region": "us-east-2"
+        }
+      },
       "auth": {
-        "HuskerlyCognitoService": {},
-        "userPoolGroups": {}
+        "huskerlyreactapp54522af7": {}
       },
       "function": {
-        "AdminQueries0090edc7": {
-          "deploymentBucketName": "amplify-huskerlyreactapp-dev-dbc2e-deployment",
-          "s3Key": "amplify-builds/AdminQueries0090edc7-785144666735682b5956-build.zip"
-        },
-        "testlambda": {},
-        "HuskerlyCognitoService": {}
-      },
-      "api": {
-        "AdminQueries": {}
-      }
-    }
-  },
-  "huskyenv": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-huskerlyreactapp-huskyenv-c1024-authRole",
-      "UnauthRoleArn": "arn:aws:iam::058264409130:role/amplify-huskerlyreactapp-huskyenv-c1024-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::058264409130:role/amplify-huskerlyreactapp-huskyenv-c1024-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-huskerlyreactapp-huskyenv-c1024-deployment",
-      "UnauthRoleName": "amplify-huskerlyreactapp-huskyenv-c1024-unauthRole",
-      "StackName": "amplify-huskerlyreactapp-huskyenv-c1024",
-      "StackId": "arn:aws:cloudformation:us-east-1:058264409130:stack/amplify-huskerlyreactapp-huskyenv-c1024/de564ec0-45da-11ef-bd09-0e4075a57531",
-      "AmplifyAppId": "d3toe6bm7diti5"
-    },
-    "categories": {
-      "auth": {
-        "HuskerlyCognitoService": {},
-        "userPoolGroups": {}
-      },
-      "function": {
-        "AdminQueries0090edc7": {
-          "deploymentBucketName": "amplify-huskerlyreactapp-huskyenv-c1024-deployment",
-          "s3Key": "amplify-builds/AdminQueries0090edc7-785144666735682b5956-build.zip"
-        },
-        "testlambda": {
-          "dbHost": "proxy-1721309360289-huskerlydatabase1.proxy-che2wqk4qebu.us-east-2.rds.amazonaws.com",
+        "testInsertUser": {
+          "dbHost": "huskerlydatabase1.che2wqk4qebu.us-east-2.rds.amazonaws.com",
           "dbName": "huskerlydatabase",
           "dbPassword": "huskerlyadmin",
           "dbUser": "huskerlyadmin",
-          "deploymentBucketName": "amplify-huskerlyreactapp-huskyenv-c1024-deployment",
-          "s3Key": "amplify-builds/testlambda-533537634d4b716f3969-build.zip"
-        },
-        "HuskerlyCognitoService": {}
-      },
-      "api": {
-        "AdminQueries": {},
-        "testapi": {}
+          "secretsPathAmplifyAppId": "d2a8ctqnn4cl7u"
+        }
       }
     }
   }

@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "api": {
+      "huskerlyreactapp": [
+        "Query",
+        "Mutation"
+      ]
+    },
+    "auth": {
+      "huskerlyreactapp54522af7": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "dbHost",
+      "environmentVariableName": "DB_HOST"
+    },
+    {
+      "cloudFormationParameterName": "dbName",
+      "environmentVariableName": "DB_NAME"
+    },
+    {
+      "cloudFormationParameterName": "dbPassword",
+      "environmentVariableName": "DB_PASSWORD"
+    },
+    {
+      "cloudFormationParameterName": "dbUser",
+      "environmentVariableName": "DB_USER"
+    }
+  ],
+  "secretNames": [
+    "DB_HOST",
+    "DB_NAME",
+    "DB_PASSWORD",
+    "DB_USER"
+  ]
+}

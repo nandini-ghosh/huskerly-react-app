@@ -1,26 +1,25 @@
 {
   "api": {
-    "AdminQueries": {
-      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId"
+    "huskerlyreactapp": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
           ],
-          "category": "auth",
-          "resourceName": "HuskerlyCognitoService"
-        },
-        {
-          "attributes": [
-            "Arn",
-            "Name"
-          ],
-          "category": "function",
-          "resourceName": "AdminQueries0090edc7"
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            },
+            "authenticationType": "API_KEY"
+          }
         }
-      ],
+      },
       "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
+      "service": "AppSync"
     },
     "testapi": {
       "dependsOn": [
@@ -30,7 +29,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "testlambda"
+          "resourceName": "testInsertUser"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -38,14 +37,13 @@
     }
   },
   "auth": {
-    "HuskerlyCognitoService": {
+    "huskerlyreactapp54522af7": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
-        "mfaConfiguration": "OPTIONAL",
+        "mfaConfiguration": "OFF",
         "mfaTypes": [
-          "SMS",
-          "TOTP"
+          "SMS"
         ],
         "passwordProtectionSettings": {
           "passwordPolicyCharacters": [],
@@ -55,118 +53,104 @@
           "EMAIL"
         ],
         "socialProviders": [],
-        "usernameAttributes": [
-          "EMAIL"
-        ],
+        "usernameAttributes": [],
         "verificationMechanisms": [
           "EMAIL"
         ]
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
-    },
-    "userPoolGroups": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId",
-            "AppClientIDWeb",
-            "AppClientID",
-            "IdentityPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "HuskerlyCognitoService"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Cognito-UserPool-Groups"
     }
   },
   "function": {
-    "AdminQueries0090edc7": {
+    "testInsertUser": {
       "build": true,
       "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "huskerlyreactapp"
+        },
         {
           "attributes": [
             "UserPoolId"
           ],
           "category": "auth",
-          "resourceName": "HuskerlyCognitoService"
+          "resourceName": "huskerlyreactapp54522af7"
         }
       ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "testlambda": {
-      "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "parameters": {
-    "AMPLIFY_function_AdminQueries0090edc7_deploymentBucketName": {
+    "AMPLIFY_function_testInsertUser_dbHost": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "AdminQueries0090edc7"
+          "resourceName": "testInsertUser"
         }
       ]
     },
-    "AMPLIFY_function_AdminQueries0090edc7_s3Key": {
+    "AMPLIFY_function_testInsertUser_dbName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "AdminQueries0090edc7"
+          "resourceName": "testInsertUser"
         }
       ]
     },
-    "AMPLIFY_function_testlambda_dbHost": {
+    "AMPLIFY_function_testInsertUser_dbPassword": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "testlambda"
+          "resourceName": "testInsertUser"
         }
       ]
     },
-    "AMPLIFY_function_testlambda_dbName": {
+    "AMPLIFY_function_testInsertUser_dbUser": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "testlambda"
+          "resourceName": "testInsertUser"
         }
       ]
     },
-    "AMPLIFY_function_testlambda_dbPassword": {
+    "AMPLIFY_function_testInsertUser_secretsPathAmplifyAppId": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "testlambda"
+          "resourceName": "testInsertUser"
         }
       ]
     },
-    "AMPLIFY_function_testlambda_dbUser": {
+    "AMPLIFY_storage_huskerlyreactappfb280dfb_bucketName": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "testlambda"
+          "category": "storage",
+          "resourceName": "huskerlyreactappfb280dfb"
         }
       ]
     },
-    "AMPLIFY_function_testlambda_deploymentBucketName": {
+    "AMPLIFY_storage_huskerlyreactappfb280dfb_region": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "testlambda"
+          "category": "storage",
+          "resourceName": "huskerlyreactappfb280dfb"
         }
       ]
-    },
-    "AMPLIFY_function_testlambda_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "testlambda"
-        }
-      ]
+    }
+  },
+  "storage": {
+    "huskerlyreactappfb280dfb": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3",
+      "serviceType": "imported"
     }
   }
 }
