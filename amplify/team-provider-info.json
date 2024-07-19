@@ -27,8 +27,14 @@
           "dbName": "huskerlydatabase",
           "dbPassword": "huskerlyadmin",
           "dbUser": "huskerlyadmin",
-          "secretsPathAmplifyAppId": "d2a8ctqnn4cl7u"
+          "secretsPathAmplifyAppId": "d2a8ctqnn4cl7u",
+          "deploymentBucketName": "amplify-huskerlyreactapp-husky-6bb01-deployment",
+          "s3Key": "amplify-builds/testInsertUser-7175734e78512b663055-build.zip"
         }
+      },
+      "api": {
+        "huskerlyreactapp": {},
+        "testapi": {}
       }
     }
   }

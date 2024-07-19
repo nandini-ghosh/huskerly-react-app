@@ -120,6 +120,22 @@
         }
       ]
     },
+    "AMPLIFY_function_testInsertUser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testInsertUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_testInsertUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testInsertUser"
+        }
+      ]
+    },
     "AMPLIFY_function_testInsertUser_secretsPathAmplifyAppId": {
       "usedBy": [
         {

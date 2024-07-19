@@ -7,6 +7,13 @@ const awsmobile = {
     "aws_appsync_region": "us-east-2",
     "aws_appsync_authenticationType": "API_KEY",
     "aws_appsync_apiKey": "da2-xkamzy7tzjfe5phq7v3sqhoekq",
+    "aws_cloud_logic_custom": [
+        {
+            "name": "testapi",
+            "endpoint": "https://t54g975ny9.execute-api.us-east-2.amazonaws.com/husky",
+            "region": "us-east-2"
+        }
+    ],
     "aws_cognito_identity_pool_id": "us-east-2:8ed7df11-4a36-4457-b7b7-33c57883a3ec",
     "aws_cognito_region": "us-east-2",
     "aws_user_pools_id": "us-east-2_N9CvRyf0C",
