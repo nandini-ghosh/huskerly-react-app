@@ -1,6 +1,5 @@
 import logo from './logo-husky.png';
-import './App.css';
-import cors from "cors";
+import './index.css';
 import { useState } from 'react';
 
 // Imports the Amplify library from 'aws-amplify' package. This is used to configure your app to interact with AWS services.
@@ -20,43 +19,40 @@ import awsExports from './aws-exports';
 // Configures the Amplify library with the settings from aws-exports.js, which includes all the AWS service configurations for this project.
 Amplify.configure(awsExports);
 
-function App() {
-  const [data, setData] = useState(null)
+function SplashPage() {
+    const [data, setData] = useState(null)
 
-  const handleClick = async () => {
-    try {
-      const response = await fetch('https://zi56v3r5xl.execute-api.us-east-2.amazonaws.com/');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json(); // Parse the JSON data
-      console.log(data); // Log the data to verify it
-      setData(data);
-    } catch (err) {
-      console.log(err.message);
-    }
-  };
-  
+    const handleClick = async () => {
+        try {
+            const response = await fetch('https://zi56v3r5xl.execute-api.us-east-2.amazonaws.com/');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json(); // Parse the JSON data
+            console.log(data); // Log the data to verify it
+            setData(data);
+        } catch (err) {
+            console.log(err.message);
+        }
+    };
 
-  return (
-    <div className="App">
-      <Authenticator>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>Huskerly</h1>
-          <div className='App-body'>
-            Coming soon...
-          </div>
-          <button className='button-red' onClick={handleClick}>See message</button>
-          <div>{data && JSON.stringify(data)}</div>
-        </header>
-      </Authenticator>
-    </div>
-  );
+
+    return (
+        <div className="splash-page">
+            <Authenticator>
+            <img src={logo} className="splash-logo" alt="logo" />
+            <div className='splash-header'>Huskerly</div>
+            <div className='splash-body'>
+                Collaborate with the pack.
+            </div>
+            <button className='button-red' onClick={handleClick}>Get started</button>
+            <div>{data && JSON.stringify(data)}</div>
+            </Authenticator>
+        </div>
+    );
 }
 
-export default withAuthenticator(App);
-
+export default withAuthenticator(SplashPage);
 
 
 
