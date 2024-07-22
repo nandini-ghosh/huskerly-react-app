@@ -68,6 +68,7 @@ Flows are designed with specific user groups in mind (marked with their respecti
 
 ### Flow 1 : Login and User Roles
 `Status: IN PROGRESS`
+`USER GROUPS: All`
 
 **Feature List**
 - Log in / Sign up with AWS Cognito
