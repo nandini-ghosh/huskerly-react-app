@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Huskerly React App
+Front-end repo for the Huskerly chat application. This repository contains the source code for the AWS Amplify web app. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The Huskerly app is a real-time chat application that helps organizations maintain teams with their own unique communication channels.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## User Groups
 
-## Available Scripts
+### Regular Members
+These members are invited to an existing organization by organization administrators. They are a part of one or many teams.
 
-In the project directory, you can run:
+**Features:**
+- Joining a group (through an invite link) and signing up for an account on Huskerly
+- Viewing the group, teams and channels (view only for public channels in other teams, no access to private channels in other teams)
+- Viewing the team(s) / channels they are a part of
+- Viewing and editing their user profile
+- Adding a new team and team members to that team
+- Adding a channel
 
-### `npm start`
+> Denoted by 'R'
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Organization Administrators
+This member registers organizations on Huskerly and invites members to them. They can moderate the organization and assign assistant admins to help them.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Features:**
+- Signing up for an account on Huskerly and registering a new group
+- Adding new members to a group (post registration approval from a System Administrator)
+- Viewing and editing the group, teams and streams
+- Viewing and editing their user profile
+- Adding a new team and team members to that team
+- Adding a channel
+- Suspending and reinstating access for the members in the organization
+- Editing the organization details
+- Appointing assistant admins and switching organization admin roles to an assistant
 
-### `npm test`
+> Denoted by 'OA'
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Assistant Administrators
+These members are assigned by the Organization Administrator to moderate the organization.
 
-### `npm run build`
+**Features:**
+- Signing up for an account on Huskerly and registering a new group
+- Adding new members to a group (post registration approval from a System Administrator)
+- Viewing and editing the group, teams and streams
+- Viewing and editing their user profile
+- Adding a new team and team members to that team
+- Adding a channel
+- Suspending and reinstating access for the members in the organization
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Denoted by 'AA'
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### System Administrators
+These members approve the registration of organizations on Huskerly and manages the organizations if needed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Features:**
+- Approving new organizations and editing them
+- Appointing organization admins and editing them
+- Can moderate any message in any stream in any organization
+- Viewing and editing their user profile
+- Suspending and reinstating access for the members in any organization
 
-### `npm run eject`
+> Denoted by 'S'
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Flows and Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Flow** - A sequence of related screens in the wireframes for this project which can be found on this [Figma Board](https://www.figma.com/design/RWtpxoFoTCkRRjtVjMO8iN/Huskerly?node-id=0-1&t=SpAgBPqd4KntDM0w-1)
+**Feature** - A task that can be completed on Huskerly
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Flows are designed with specific user groups in mind (marked with their respective denotations).
 
-## Learn More
+### Flow 1 : Login and User Roles
+`Status: IN PROGRESS`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Feature List**
+- Log in / Sign up with AWS Cognito
+- Joining an existing organization
+- Registering a new organization
+- Authenticate user invites and emails with AWS Cognito
+- View username and email
+- View user's organization
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
