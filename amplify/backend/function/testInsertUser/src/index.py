@@ -1,7 +1,7 @@
 import json
 import os
 import psycopg2
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 
 def connect_to_database():
@@ -54,12 +54,12 @@ def handler(event, context):
     }
 
 
-load_dotenv()
+# load_dotenv()
 
-# Mock event and context
-event = {}
-context = {}
+# # Mock event and context
+# event = {}
+# context = {}
 
-# Invoke the handler
-response = handler(event, context)
-print(response)
+# # Invoke the handler
+# response = handler(event, context)
+# print(response)
