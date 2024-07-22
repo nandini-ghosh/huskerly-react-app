@@ -1,6 +1,7 @@
 import logo from './logo-husky.png';
 import './index.css';
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 // Imports the Amplify library from 'aws-amplify' package. This is used to configure your app to interact with AWS services.
 import { Amplify } from 'aws-amplify';
@@ -39,20 +40,28 @@ function SplashPage() {
 
     return (
         <div className="splash-page">
-            <Authenticator>
-            <img src={logo} className="splash-logo" alt="logo" />
-            <div className='splash-header'>Huskerly</div>
-            <div className='splash-body'>
-                Collaborate with the pack.
-            </div>
-            <button className='button-red' onClick={handleClick}>Get started</button>
+            {/* <Authenticator> */}
+                <img src={logo} className="splash-logo" alt="logo" />
+                <div className='splash-header'>Huskerly</div>
+                <div className='splash-body'>
+                    Collaborate with the pack.
+                </div>
+                {/* 
+            <button className='button-red' onClick={handleClick}>Get started</button> 
             <div>{data && JSON.stringify(data)}</div>
-            </Authenticator>
+            */}
+                <Link to="/join-or-register">
+                    <button className='button-red'>Get started</button>
+                </Link>
+            {/* </Authenticator> */}
         </div>
     );
 }
 
-export default withAuthenticator(SplashPage);
+// export default withAuthenticator(SplashPage);
+
+export default SplashPage;
+
 
 
 
