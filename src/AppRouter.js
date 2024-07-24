@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import JoinOrRegister from "./JoinOrRegister";
+import JoinOrRegister from "./LoginFlow/JoinOrRegister";
 import SplashPage from "./SplashPage";
 
 function AppRouter() {

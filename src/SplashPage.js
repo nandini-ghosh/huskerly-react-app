@@ -51,7 +51,7 @@ function SplashPage() {
             <div>{data && JSON.stringify(data)}</div>
             */}
                 <Link to="/join-or-register">
-                    <button className='button-red'>Get started</button>
+                    <button className='button-red medium spacing-medium'>Get started</button>
                 </Link>
             {/* </Authenticator> */}
         </div>

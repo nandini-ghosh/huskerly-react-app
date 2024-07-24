@@ -1,0 +1,30 @@
+#white-background{
+    background-color: #ffffff;
+}
+
+.dialogue-box {
+    background-color: #28292d;
+    height: 400px;
+    width: 570px;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -285px;
+}
+
+.dialogue-box-content {
+    display: flex;
+    flex-direction: column;
+    padding: 70px;
+    align-items: center;
+}
+
+.dialogue-box-text {
+    color:#ffffff;
+    font-size:24px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 20px;
+}
