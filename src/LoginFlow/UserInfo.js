@@ -1,15 +1,26 @@
 import './style.css';
 import { useState } from 'react';
+import { CiLocationArrow1 } from 'react-icons/ci';
 import { FaUserCircle } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
+
 
 function UserInfo() {
+    const location = useLocation();
+    const userData = location.state.userData
+    const userAtts = location.state.userAtts
+
+    console.log(userData)
+    console.log(userAtts)
+
+
     return (
         <body id="white-background">
             <div className='contents-center'>
                 <div className='user-icon-xl'><FaUserCircle/></div>
                 <div className='caption-wrapper'>
-                    <div className='caption-text username'>Jane Doe</div>
-                    <div className='caption-text email'>jane.doe@company.com</div>
+                    <div className='caption-text username'> Welcome {userData.username}! </div>
+                    <div className='caption-text email'> { userAtts.email } </div>
                 </div>
                 <div className='organization-list-wrapper'>
                     <div className='caption-text'>Your Group</div>
