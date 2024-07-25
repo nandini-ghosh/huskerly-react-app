@@ -13,22 +13,15 @@
     },
     "categories": {
       "auth": {
-        "huskerlyreactapp54522af7": {}
-      },
-      "function": {
-        "testInsertUser": {
-          "dbHost": "huskerlydatabase1.che2wqk4qebu.us-east-2.rds.amazonaws.com",
-          "dbName": "huskerlydatabase",
-          "dbPassword": "huskerlyadmin",
-          "dbUser": "huskerlyadmin",
-          "secretsPathAmplifyAppId": "d2a8ctqnn4cl7u",
-          "deploymentBucketName": "amplify-huskerlyreactapp-husky-6bb01-deployment",
-          "s3Key": "amplify-builds/testInsertUser-74755a4a392f6b464455-build.zip"
+        "huskerlyreactappda2427b7": {
+          "userPoolId": "us-east-2_m9iqBT7HS",
+          "userPoolName": "HuskerlyTestPoolA1",
+          "webClientId": "7evq6kks25s8gb34e620llu15n",
+          "nativeClientId": "7evq6kks25s8gb34e620llu15n"
         }
       },
-      "api": {
-        "huskerlyreactapp": {},
-        "testapi": {}
+      "function": {
+        "testInsertUser": {}
       }
     }
   }
