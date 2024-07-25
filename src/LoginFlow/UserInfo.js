@@ -31,7 +31,7 @@ function UserInfo() {
                     </div>
                 </div>
                 <div className='button-black wd-large spacing-large'>Join group</div>
-                <Link to="/join"><div className='link-text'>Register a new group instead</div></Link>
+                <Link to="/register" state={{userData, userAtts}} ><div className='link-text'>Register a new group instead</div></Link>
             </div>
         </body>
     );

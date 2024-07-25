@@ -1,0 +1,48 @@
+{
+  "api": {},
+  "auth": {
+    "huskerlyreactappda2427b7": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  },
+  "function": {},
+  "parameters": {
+    "AMPLIFY_auth_huskerlyreactappda2427b7_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "huskerlyreactappda2427b7"
+        }
+      ]
+    },
+    "AMPLIFY_auth_huskerlyreactappda2427b7_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "huskerlyreactappda2427b7"
+        }
+      ]
+    },
+    "AMPLIFY_auth_huskerlyreactappda2427b7_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "huskerlyreactappda2427b7"
+        }
+      ]
+    },
+    "AMPLIFY_auth_huskerlyreactappda2427b7_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "huskerlyreactappda2427b7"
+        }
+      ]
+    }
+  },
+  "storage": {}
+}
