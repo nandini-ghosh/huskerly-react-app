@@ -14,12 +14,12 @@ import '@aws-amplify/ui-react/styles.css';
 function JoinOrRegister() {
 
     const [userData, setUserData] = useState({
-        username : "Jane Doe",
-        userID : "0"
+        username: "Jane Doe",
+        userID: "0"
     });
 
     const [userAtts, setUserAtts] = useState();
-    
+
     // Get the stuff from Cognito 
     useEffect(() => {
         async function fetchUser() {
@@ -53,9 +53,9 @@ function JoinOrRegister() {
                         Welcome to Huskerly!
                         <br></br>What would you like to do today?
                     </div>
-                    <Link to={{pathname: "/user-info"}} state={{userData, userAtts}}><div className='button-white-outline wd-large spacing-small'  >Join an existing group</div> </Link>
-                    <div className='button-white-outline wd-large spacing-small'>Register a new group</div>
-                    <button className='button-white-outline wd-large spacing-small' onClick={handleLogOutClick()} >Log Out!</button>
+                    <Link to={{pathname: "/join"}} state={{userData, userAtts}}><div className='button-white-outline wd-large spacing-small'  >Join an existing group</div> </Link>
+                    <Link to={{ pathname: "/register" }} state={{userData, userAtts}}><div className='button-white-outline wd-large spacing-small'>Register a new group</div> </Link>
+                    <button className='button-white-outline wd-large spacing-small' onClick={handleLogOutClick()} >Temp Log Out</button>
                 </div>
             </div>
         </body>

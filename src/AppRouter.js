@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import SplashPage from "./SplashPage";
 import JoinOrRegister from "./LoginFlow/JoinOrRegister";
 import UserInfo from "./LoginFlow/UserInfo";
-import SplashPage from "./SplashPage";
+import Register from "./LoginFlow/Register";
+import ConfirmationPage from "./LoginFlow/ConfirmationPage";
 
 
 
@@ -12,7 +14,9 @@ function AppRouter() {
         <Routes>
             <Route path="/" element={<SplashPage />} />
             <Route path="/join-or-register" element={<JoinOrRegister />} />
-            <Route path="/user-info" element={<UserInfo />} />
+            <Route path="/join" element={<UserInfo />} />
+            <Route path="/register" element={<Register/>} />
+            <Route path="/register/confirmation" element={<ConfirmationPage/>} />
         </Routes>
         </BrowserRouter>
     )
