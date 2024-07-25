@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap');
 
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background-color: #000000;
 }
 
-.splash-page {
+.contents-center {
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -20,7 +24,6 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-
 
 .splash-header {
   font-family: "Inter", sans-serif;
@@ -38,8 +41,18 @@ body {
   margin-bottom: 40px;
 }
 
+/* BUTTONS **/
+
+.wd-medium {
+  width: 330px !important;
+}
+
+.wd-large {
+  width: 380px !important;
+}
+
 .button-red {
-  margin-top: 20px;
+  text-decoration: none;
   background-color: #C8102E;
   color: #FFFFFF;
   font-family: "Inter", sans-serif;
@@ -47,9 +60,53 @@ body {
   font-weight: 500;
   border-radius: 25px;
   border: none;
-  padding-left: 10px;
-  height: 60px;
-  width: 330px;
+  padding: 10px 20px;
+  width: fit-content;
+}
+
+.button-black {
+  text-decoration: none;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 25px;
+  border: none;
+  padding: 10px 20px;
+  width: fit-content;
+}
+
+.button-white-outline {
+  text-decoration: none;
+  background-color: none;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 25px;
+  border: solid 2.5pt #FFFFFF;
+  padding: 10px 20px;
+  width: fit-content;
+  text-align: center;
+}
+
+.spacing-small {
+  margin-top: 10px;
+}
+
+.spacing-medium {
+  margin-top: 20px;
+}
+
+.spacing-large {
+  margin-top: 50px;
+}
+
+/* TEXT **/
+.caption-text {
+  font-weight: 600;
+  font-size: 20px;
 }
 
 @keyframes fadeInAnimation {

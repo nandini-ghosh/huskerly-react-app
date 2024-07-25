@@ -1,14 +1,12 @@
 import logo from './logo-husky.png';
 import './index.css';
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 // Imports the Amplify library from 'aws-amplify' package. This is used to configure your app to interact with AWS services.
 import { Amplify } from 'aws-amplify';
 
-// Imports the Authenticator and withAuthenticator components from '@aws-amplify/ui-react'.
-// Authenticator is a React component that provides a ready-to-use sign-in and sign-up UI.
-// withAuthenticator is a higher-order component that wraps your app component to enforce authentication.
-import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
+
 
 // Imports the default styles for the Amplify UI components. This line ensures that the authenticator looks nice out of the box.
 import '@aws-amplify/ui-react/styles.css';
@@ -20,39 +18,29 @@ import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 
 function SplashPage() {
-    const [data, setData] = useState(null)
-
-    const handleClick = async () => {
-        try {
-            const response = await fetch('https://zi56v3r5xl.execute-api.us-east-2.amazonaws.com/');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const data = await response.json(); // Parse the JSON data
-            console.log(data); // Log the data to verify it
-            setData(data);
-        } catch (err) {
-            console.log(err.message);
-        }
-    };
-
 
     return (
-        <div className="splash-page">
-            <Authenticator>
-            <img src={logo} className="splash-logo" alt="logo" />
-            <div className='splash-header'>Huskerly</div>
-            <div className='splash-body'>
-                Collaborate with the pack.
-            </div>
-            <button className='button-red' onClick={handleClick}>Get started</button>
+        <div className="contents-center">
+                <img src={logo} className="splash-logo" alt="logo" />
+                <div className='splash-header'>Huskerly</div>
+                <div className='splash-body'>
+                    Collaborate with the pack.
+                </div>
+                {/* 
+            <button className='button-red' onClick={handleClick}>Get started</button> 
             <div>{data && JSON.stringify(data)}</div>
-            </Authenticator>
+            */}
+                <Link to="/join-or-register">
+                    <button className='button-red wd-medium spacing-medium'>Get started</button>
+                </Link>
         </div>
     );
 }
 
-export default withAuthenticator(SplashPage);
+// export default withAuthenticator(SplashPage);
+
+export default SplashPage;
+
 
 
 
