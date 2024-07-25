@@ -25,7 +25,7 @@ function Register() {
                     <div className='caption-text'>Group Name</div>
                     <input id="groupname" className='input-field wd-large' type='text' placeholder='Enter a name for your group...'></input>
                 </div>
-                <Link to="confirmation"><div className='button-black wd-large spacing-large'>Register group</div></Link>
+                <Link to="/registration-confirmation"><div className='button-black wd-large spacing-large'>Register group</div></Link>
                 <Link to="/join"><div className='link-text'>Join an existing group instead</div></Link>
             </div>
         </body>
