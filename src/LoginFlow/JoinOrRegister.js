@@ -24,14 +24,16 @@ function JoinOrRegister() {
     useEffect(() => {
         async function fetchUser() {
             try {
+                // temp var for getting user's data
                 const uD = await getCurrentUser();
                 setUserData(uD);
 
+                // temp var for getting user's attributes
                 const uA = await fetchUserAttributes();
                 setUserAtts(uA);
                 console.log(uA)
                 console.log(uD)
-                        
+        
             } catch (error) {
                 console.error('Error fetching user:', error);
             }
