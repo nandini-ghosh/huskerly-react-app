@@ -16,7 +16,7 @@ function AppRouter() {
             <Route path="/join-or-register" element={<JoinOrRegister />} />
             <Route path="/join" element={<UserInfo />} />
             <Route path="/register" element={<Register/>} />
-            <Route path="/register/confirmation" element={<ConfirmationPage/>} />
+            <Route path="/registration-confirmation" element={<ConfirmationPage/>} />
         </Routes>
         </BrowserRouter>
     )
