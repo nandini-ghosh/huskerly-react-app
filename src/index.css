@@ -51,6 +51,10 @@ body {
   width: 380px !important;
 }
 
+.wd-xlarge {
+  width: 530px !important;
+}
+
 .button-red {
   text-decoration: none;
   background-color: #C8102E;
@@ -107,6 +111,16 @@ body {
 .caption-text {
   font-weight: 600;
   font-size: 20px;
+}
+
+/* INPUT FIELDS **/
+.input-field {
+  height: 50px;
+  margin-top: 5px;;
+  background-color: #FFFFFF;
+  border: 1.5pt solid #A4A4A4;
+  border-radius: 10px;
+  padding: 0px 10px;
 }
 
 @keyframes fadeInAnimation {

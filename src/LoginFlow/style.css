@@ -4,7 +4,7 @@
 
 .dialogue-box {
     background-color: #28292d;
-    height: 400px;
+    height: fit-content;
     width: 570px;
     border-radius: 10px;
     position: fixed;
@@ -12,6 +12,9 @@
     left: 50%;
     margin-top: -200px;
     margin-left: -285px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .dialogue-box-content {
@@ -24,7 +27,7 @@
 .dialogue-box-text {
     color:#ffffff;
     font-size:24px;
-    font-weight: 600;
+    font-weight: 400;
     text-align: left;
     margin-bottom: 20px;
 }
@@ -72,4 +75,12 @@
     background-color: #C8102E;
     border-radius: 10px;
     margin-right: 25px;
+}
+
+.link-text {
+    margin-top: 20px;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: underline;
 }

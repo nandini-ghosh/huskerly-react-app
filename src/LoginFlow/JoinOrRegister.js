@@ -10,22 +10,22 @@ var fetchedUser = false // this is probably bad practice
 function JoinOrRegister() {
 
     const [userData, setUserData] = useState({
-        username : "Jane Doe",
-        userID : "0"
+        username: "Jane Doe",
+        userID: "0"
     });
 
     const [userAtts, setUserAtts] = useState();
-    
+
     // Get the stuff from Cognito 
     useEffect(() => {
         async function fetchUser() {
             try {
                 const uD = await getCurrentUser();
-                setUserData(uD)    
+                setUserData(uD)
 
                 const uA = await fetchUserAttributes();
-                setUserAtts(uA)    
-                        
+                setUserAtts(uA)
+
             } catch (error) {
                 console.error('Error fetching user:', error);
             }
@@ -42,8 +42,8 @@ function JoinOrRegister() {
                         Welcome to Huskerly!
                         <br></br>What would you like to do today?
                     </div>
-                        <Link to={{pathname: "/user-info"}} state={{userData, userAtts}}><div className='button-white-outline wd-large spacing-small'  >Join an existing group</div> </Link>
-                    <div className='button-white-outline wd-large spacing-small'>Register a new group</div>
+                    <Link to={{ pathname: "/join" }} state={{ userData, userAtts }}><div className='button-white-outline wd-large spacing-small'>Join an existing group</div> </Link>
+                    <Link to={{ pathname: "/register" }}><div className='button-white-outline wd-large spacing-small'>Register a new group</div> </Link>
                 </div>
             </div>
         </body>
