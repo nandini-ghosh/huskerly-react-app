@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import SplashPage from "./SplashPage";
 import JoinOrRegister from "./LoginFlow/JoinOrRegister";
 import UserInfo from "./LoginFlow/UserInfo";
-import SplashPage from "./SplashPage";
+import Register from "./LoginFlow/Register";
+import ConfirmationPage from "./LoginFlow/ConfirmationPage";
 
 // Authenticator is a React component that provides a ready-to-use sign-in and sign-up UI.
 // withAuthenticator is a higher-order component that wraps your app component to enforce authentication.
@@ -14,11 +16,15 @@ function AppRouter() {
         <BrowserRouter>
         <Routes>
             <Route path="/" element={<SplashPage />} />
-            <Route path="/join-or-register" element={<Authenticator><JoinOrRegister /></Authenticator>} />
-            <Route path="/user-info" element={<UserInfo />} />
+            {/* <Route path="/join-or-register" element={<Authenticator><JoinOrRegister /></Authenticator>} /> */}
+            <Route path="/join-or-register" element={<JoinOrRegister />} />
+            <Route path="/join" element={<UserInfo />} />
+            <Route path="/register" element={<Register/>} />
+            <Route path="/register/confirmation" element={<ConfirmationPage/>} />
         </Routes>
         </BrowserRouter>
     )
 }
 
-export default withAuthenticator(AppRouter);
+// export default withAuthenticator(AppRouter);
+export default AppRouter;
