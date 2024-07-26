@@ -1,7 +1,5 @@
 import { useState } from "react"
 
-
-
 const Collapse = ({ collapsed, title, content }) => {
     const [isCollapsed, setIsCollapsed] = useState(collapsed);
 
