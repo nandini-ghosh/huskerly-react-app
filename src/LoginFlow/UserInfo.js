@@ -27,7 +27,7 @@ function UserInfo() {
                     <div className='caption-text'>Your Group</div>
                     <div className='organization-tab'>
                         <div className='organization-logo'></div>
-                        <div className='organization-label'>Northeastern Event Planning Club</div>
+                        <div className='organization-label'> {userAtts['custom:OrgID']} </div>
                     </div>
                 </div>
                 <div className='button-black wd-large spacing-large'>Join group</div>
