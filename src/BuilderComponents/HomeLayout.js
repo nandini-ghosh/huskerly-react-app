@@ -4,7 +4,7 @@ import '../index.css';
 function HomeLayout({ children }) {
     return (
         <div>
-            <Header />
+            <Header /> 
             <main>
                 {children}
             </main>
