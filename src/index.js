@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import SplashPage from './SplashPage';
+import GroupSideBanner from './GroupSideBanner';
 import AppRouter from './AppRouter';
 import reportWebVitals from './reportWebVitals';
 
@@ -12,9 +13,11 @@ root.render(
   //     <SplashPage />
   //   </AppRouter>
   // </React.StrictMode>
-  <AppRouter>
-    <SplashPage />
-  </AppRouter>
+  // <AppRouter>
+  //   <SplashPage />
+    
+  // </AppRouter>
+  <GroupSideBanner/>
 );
 
 // If you want to start measuring performance in your app, pass a function

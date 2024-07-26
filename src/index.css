@@ -123,6 +123,75 @@ body {
   padding: 0px 10px;
 }
 
+/* GROUP SIDE BAR */
+.gsb-background {
+  background-color: #282828;
+  max-width: max-content;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.gsb-header-title {
+  font-weight: 700;
+  font-size: 26px;
+  color: #FFFFFF;
+  line-height: 35px;
+}
+
+.gsb-header-members {
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  padding-top: 10px;
+}
+
+.gsb-header {
+  width: 275px;
+  height: fit-content;
+  border: 1px solid #A4A4A4;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.gsb-content {
+  font-weight: 700;
+  font-size: 20px;
+  color:#FFFFFF;
+  padding-top: 40px;
+}
+
+.gsb-collapsible-team {
+  color: white;
+  cursor: pointer;
+  background-color: #282828;
+  padding: 11px; 
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.gsb-collapsed-content {
+  padding: 0 22px;
+  display: none;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.gsb-opened-content {
+  padding: 0 22px;
+  display: block;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
