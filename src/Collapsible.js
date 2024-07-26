@@ -19,3 +19,6 @@ const Collapse = ({ collapsed, title, content }) => {
 };
 
 export default Collapse;
+
+
+

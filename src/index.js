@@ -13,11 +13,10 @@ root.render(
   //     <SplashPage />
   //   </AppRouter>
   // </React.StrictMode>
-  // <AppRouter>
-  //   <SplashPage />
+  <AppRouter>
+    <SplashPage />
     
-  // </AppRouter>
-  <GroupSideBanner/>
+  </AppRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
