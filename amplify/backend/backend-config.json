@@ -1,7 +1,7 @@
 {
   "api": {},
   "auth": {
-    "huskerlyreactappda2427b7": {
+    "huskerlyreactapp9da8c82c": {
       "customAuth": false,
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
@@ -11,35 +11,35 @@
   },
   "function": {},
   "parameters": {
-    "AMPLIFY_auth_huskerlyreactappda2427b7_nativeClientId": {
+    "AMPLIFY_auth_huskerlyreactapp9da8c82c_nativeClientId": {
       "usedBy": [
         {
           "category": "auth",
-          "resourceName": "huskerlyreactappda2427b7"
+          "resourceName": "huskerlyreactapp9da8c82c"
         }
       ]
     },
-    "AMPLIFY_auth_huskerlyreactappda2427b7_userPoolId": {
+    "AMPLIFY_auth_huskerlyreactapp9da8c82c_userPoolId": {
       "usedBy": [
         {
           "category": "auth",
-          "resourceName": "huskerlyreactappda2427b7"
+          "resourceName": "huskerlyreactapp9da8c82c"
         }
       ]
     },
-    "AMPLIFY_auth_huskerlyreactappda2427b7_userPoolName": {
+    "AMPLIFY_auth_huskerlyreactapp9da8c82c_userPoolName": {
       "usedBy": [
         {
           "category": "auth",
-          "resourceName": "huskerlyreactappda2427b7"
+          "resourceName": "huskerlyreactapp9da8c82c"
         }
       ]
     },
-    "AMPLIFY_auth_huskerlyreactappda2427b7_webClientId": {
+    "AMPLIFY_auth_huskerlyreactapp9da8c82c_webClientId": {
       "usedBy": [
         {
           "category": "auth",
-          "resourceName": "huskerlyreactappda2427b7"
+          "resourceName": "huskerlyreactapp9da8c82c"
         }
       ]
     }

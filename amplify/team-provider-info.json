@@ -12,16 +12,16 @@
       "AmplifyAppId": "d2a8ctqnn4cl7u"
     },
     "categories": {
-      "auth": {
-        "huskerlyreactappda2427b7": {
-          "userPoolId": "us-east-2_m9iqBT7HS",
-          "userPoolName": "HuskerlyTestPoolA1",
-          "webClientId": "7evq6kks25s8gb34e620llu15n",
-          "nativeClientId": "7evq6kks25s8gb34e620llu15n"
-        }
-      },
       "function": {
         "testInsertUser": {}
+      },
+      "auth": {
+        "huskerlyreactapp9da8c82c": {
+          "userPoolId": "us-east-2_T9wC3l0WA",
+          "userPoolName": "HuskerlyTestPoolA2",
+          "webClientId": "3tresojn447ud5i85qjm7l1893",
+          "nativeClientId": "3tresojn447ud5i85qjm7l1893"
+        }
       }
     }
   }
