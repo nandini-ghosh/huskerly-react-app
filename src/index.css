@@ -293,6 +293,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  border-right: 1px solid #A4A4A4;
 }
 
 .gsb-header-title {
@@ -323,7 +324,7 @@ body {
   font-weight: 700;
   font-size: 20px;
   color:#FFFFFF;
-  padding-top: 40px;
+  padding-top: 25px;
 }
 
 .gsb-collapsible-team {
