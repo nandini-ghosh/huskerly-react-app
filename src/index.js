@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import SplashPage from './SplashPage';
-import GroupSideBanner from './GroupSideBanner';
+import GroupSideBanner from './BuilderComponents/GroupSideBanner';
 import AppRouter from './AppRouter';
 import reportWebVitals from './reportWebVitals';
 

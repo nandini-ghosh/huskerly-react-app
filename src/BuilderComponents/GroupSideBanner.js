@@ -1,8 +1,8 @@
-import './index.css';
+import '../index.css';
 import { useState } from 'react'
 import { GrAdd } from "react-icons/gr";
 
-import Collapse from './Collapsible'
+import Collapse from './Collapsible';
 
 
 function GroupSideBanner() {
