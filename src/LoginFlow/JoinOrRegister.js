@@ -43,7 +43,6 @@ function JoinOrRegister() {
 
     const handleLogOutClick = () => {
         console.log("Log out");
-        //signOut();
     };
 
     return (
