@@ -87,14 +87,24 @@ body {
   width: 100%;
   background-color: #282828;
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  flex-direction: row;
+  align-items: center;
   padding: 0px 20px;
-  font-size: 24px;
-  font-weight: 400;
   border-bottom: 1px solid #A4A4A4;
   color: #FFFFFF;
-  justify-content: center;
+}
+
+.subheader-label {
+  float: left;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+
+.subheader-icon {
+  margin-right: 10px;
+  font-size: 24px;
 }
 
 /* COMPONENTS **/
@@ -192,7 +202,7 @@ body {
   padding: 10px 20px;
   width: fit-content;
   margin-left: 5px;
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 .button-black {
@@ -207,7 +217,7 @@ body {
   padding: 10px 20px;
   width: fit-content;
   margin-left: 5px;
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 .button-black {
@@ -222,7 +232,7 @@ body {
   padding: 10px 20px;
   width: fit-content;
   margin-left: 5px;
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 .button-white {
@@ -237,7 +247,7 @@ body {
   padding: 10px 20px;
   width: fit-content;
   margin-left: 5px;
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 .button-white-outline {
@@ -253,7 +263,7 @@ body {
   width: fit-content;
   text-align: center;
   margin-left: 5px;
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 .spacing-small {
@@ -279,7 +289,8 @@ body {
 
 .input-field {
   height: 50px;
-  margin-top: 5px;;
+  margin-top: 5px;
+  ;
   background-color: #FFFFFF;
   border: 1.5pt solid #A4A4A4;
   border-radius: 10px;
@@ -323,7 +334,7 @@ body {
 .gsb-content {
   font-weight: 700;
   font-size: 20px;
-  color:#FFFFFF;
+  color: #FFFFFF;
   padding-top: 25px;
 }
 
@@ -331,7 +342,7 @@ body {
   color: white;
   cursor: pointer;
   background-color: #282828;
-  padding: 11px; 
+  padding: 11px;
   width: 100%;
   border: none;
   text-align: left;

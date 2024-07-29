@@ -13,7 +13,7 @@ function Home() {
                     <SettingsSidebar />
                     <GroupSideBanner />
                     <div className='blockbox'>
-                        <SubheaderRegular text="Team & Channel name"></SubheaderRegular>
+                        <SubheaderRegular header="General" channel="default"></SubheaderRegular>
                     </div>
                 </InnerHomeLayout>
             </body>

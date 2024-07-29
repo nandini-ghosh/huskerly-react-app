@@ -11,7 +11,7 @@ function ManageOrganizations() {
                 <InnerHomeLayout>
                     <SettingsSidebar />
                     <div className='blockbox'>
-                        <SubheaderRegular text="Manage Organizations"></SubheaderRegular>
+                        <SubheaderRegular header="Manage Organizations" channel={null}></SubheaderRegular>
                         <div className='content-box-wrapper'>
                             <div className='content-box'>
                                 <div className='list'>
