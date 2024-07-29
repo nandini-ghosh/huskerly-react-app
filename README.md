@@ -78,3 +78,12 @@ Flows are designed with specific user groups in mind (marked with their respecti
 - View username and email
 - View user's organization
 
+### Flow 2 : Registration and Initial Messaging App
+`Status: IN PROGRESS`
+`USER GROUPS: S, All`
+
+**Feature List**
+- Approving a pending registration request
+- Viewing approval requests
+- Messaging a user
+- Viewing a message from a user
