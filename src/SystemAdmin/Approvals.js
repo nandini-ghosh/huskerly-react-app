@@ -11,7 +11,7 @@ function Approvals() {
                 <InnerHomeLayout>
                     <SettingsSidebar />
                     <div className='blockbox'>
-                        <SubheaderRegular text="Pending Approvals"></SubheaderRegular>
+                        <SubheaderRegular header="Pending Approvals" channel={null}></SubheaderRegular>
                         <div className='content-box-wrapper'>
                             <div className='content-box'>
                                 <div className='list'>
