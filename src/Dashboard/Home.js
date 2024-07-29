@@ -4,6 +4,7 @@ import InnerHomeLayout from '../BuilderComponents/InnerHomeLayout';
 import SettingsSidebar from '../BuilderComponents/SettingsSidebar';
 import SubheaderRegular from '../BuilderComponents/SubheaderRegular';
 import GroupSideBanner from '../BuilderComponents/GroupSideBanner';
+import Chat from '../Messaging/Chat';
 
 function Home() {
     return (
@@ -14,6 +15,7 @@ function Home() {
                     <GroupSideBanner />
                     <div className='blockbox'>
                         <SubheaderRegular header="General" channel="default"></SubheaderRegular>
+                      <Chat />
                     </div>
                 </InnerHomeLayout>
             </body>
