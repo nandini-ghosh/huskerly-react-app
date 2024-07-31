@@ -1,14 +1,15 @@
 {
   "authSelections": "userPoolOnly",
-  "resourceName": "huskerlyreactapp9da8c82c",
+  "resourceName": "huskerlyreactapp1d7ea801",
   "serviceType": "imported",
   "region": "us-east-2",
-  "aliasAttributes": [
+  "usernameAttributes": [
     "email"
   ],
   "authProvidersUserPool": [],
   "requiredAttributes": [
-    "email"
+    "email",
+    "name"
   ],
   "passwordPolicyMinLength": 8,
   "passwordPolicyCharacters": [],

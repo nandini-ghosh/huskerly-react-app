@@ -1,6 +1,13 @@
 {
   "api": {},
   "auth": {
+    "huskerlyreactapp1d7ea801": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    },
     "huskerlyreactapp9da8c82c": {
       "customAuth": false,
       "dependsOn": [],
@@ -11,6 +18,38 @@
   },
   "function": {},
   "parameters": {
+    "AMPLIFY_auth_huskerlyreactapp1d7ea801_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "huskerlyreactapp1d7ea801"
+        }
+      ]
+    },
+    "AMPLIFY_auth_huskerlyreactapp1d7ea801_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "huskerlyreactapp1d7ea801"
+        }
+      ]
+    },
+    "AMPLIFY_auth_huskerlyreactapp1d7ea801_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "huskerlyreactapp1d7ea801"
+        }
+      ]
+    },
+    "AMPLIFY_auth_huskerlyreactapp1d7ea801_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "huskerlyreactapp1d7ea801"
+        }
+      ]
+    },
     "AMPLIFY_auth_huskerlyreactapp9da8c82c_nativeClientId": {
       "usedBy": [
         {
