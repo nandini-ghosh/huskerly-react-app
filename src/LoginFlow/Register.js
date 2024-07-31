@@ -18,7 +18,7 @@ function Register() {
             <div className='contents-center'>
                 <div className='user-icon-xl'><FaUserCircle /></div>
                 <div className='caption-wrapper'>
-                    <div className='caption-text username'> Welcome {userData.username}! </div>
+                    <div className='caption-text username'> Welcome {userAtts.name}! </div>
                     <div className='caption-text email'> { userAtts.email } </div>
                 </div>
                 <div className='organization-list-wrapper'>
