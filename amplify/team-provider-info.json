@@ -23,10 +23,10 @@
           "nativeClientId": "3tresojn447ud5i85qjm7l1893"
         },
         "huskerlyreactapp1d7ea801": {
-          "nativeClientId": "2lqe347n7140l8p5fvglmn6s47",
           "userPoolId": "us-east-2_Q3EBmTsTd",
           "userPoolName": "HuskerlyTestPoolA3",
-          "webClientId": "2lqe347n7140l8p5fvglmn6s47"
+          "webClientId": "2lqe347n7140l8p5fvglmn6s47",
+          "nativeClientId": "2lqe347n7140l8p5fvglmn6s47"
         }
       }
     }
