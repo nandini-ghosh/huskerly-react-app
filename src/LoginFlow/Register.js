@@ -1,11 +1,12 @@
 import './style.css';
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 function Register() {
     const location = useLocation();
+    const navigate = useNavigate();
     const userData = location.state?.userData
     const userAtts = location.state?.userAtts
 
@@ -42,7 +43,7 @@ function Register() {
 
         try {
             const response = await fetch(url, {
-                mode: 'no-cors',
+                //mode: 'no-cors',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -56,6 +57,7 @@ function Register() {
 
             const text = await response.text();
             console.log(text);
+            navigate('/registration-confirmation');
 
         } catch (error) {
             console.error(error.message);
