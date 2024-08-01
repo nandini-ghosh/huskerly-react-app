@@ -2,3 +2,10 @@ body#charcoal-background{
     margin: auto;
     background-color: #282828;
 }
+
+.list-item-email-text {
+  font-size: 14px;
+  color: #A4A4A4;
+  font-weight: 300;
+  margin-left: 10px;
+}
