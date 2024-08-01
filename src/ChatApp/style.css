@@ -1,0 +1,26 @@
+.chat-wrapper {
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  display: flex;
+  width: 500px;
+  height: 700px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 30px;
+  box-sizing: border-box;
+  color: white;
+  flex-direction: column;
+}
+
+.chat-log {
+  flex: 1;
+}
+
+.chat-input {
+  height: 30px;
+  width: 100%;
+  display: flex;
+}
+.chat-input input {
+  flex: 1;
+}
