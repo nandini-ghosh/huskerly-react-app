@@ -85,6 +85,10 @@ body {
   color: #C8102E;
 }
 
+.icon-sidebar.hidden {
+  display: none;
+}
+
 .subheader-bar {
   height: 80px;
   width: 100%;
