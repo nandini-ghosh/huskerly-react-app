@@ -68,7 +68,7 @@ function SettingsSidebar() {
     return (
         <div className="settings-sidebar">
             <div className='user-sidebar-wrapper'>
-                <div id="user-settings" className={`icon-sidebar white ${location.pathname === '/profile' ? 'active' : ''}`}><FaUserCircle /></div>
+                <Link to="/profile" state={{userData, userAtts}}><div id="user-settings" className={`icon-sidebar white ${location.pathname === '/profile' ? 'active' : ''}`}><FaUserCircle /></div></Link>
             </div>
             <div className='icons-sidebar-wrapper'>
                 <Link to={"/approvals"}>
