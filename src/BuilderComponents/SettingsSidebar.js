@@ -13,7 +13,7 @@ function SettingsSidebar() {
     });
 
     const [userAtts, setUserAtts] = useState();
-    const [isSysAdmin, setIsSysAdmin] = useState(false);
+    const [userRole, setUserRole] = useState();
 
     const location = useLocation();
 
@@ -32,9 +32,7 @@ function SettingsSidebar() {
                 // Check if the current user is a system admin and update state
                 if (uA) {
                     const permissions = await getUserPermissions(uA.email);
-                    if (permissions === '"SYS_ADMIN"') {
-                        setIsSysAdmin(true);
-                    }
+                    setUserRole(permissions);
                 }
             } catch (error) {
                 console.error('Error fetching user:', error);
@@ -68,16 +66,16 @@ function SettingsSidebar() {
     return (
         <div className="settings-sidebar">
             <div className='user-sidebar-wrapper'>
-                <Link to="/profile" state={{userData, userAtts}}><div id="user-settings" className={`icon-sidebar white ${location.pathname === '/profile' ? 'active' : ''}`}><FaUserCircle /></div></Link>
+                <Link to="/profile" state={{userData, userAtts, userRole}}><div id="user-settings" className={`icon-sidebar white ${location.pathname === '/profile' ? 'active' : ''}`}><FaUserCircle /></div></Link>
             </div>
             <div className='icons-sidebar-wrapper'>
                 <Link to={"/approvals"}>
-                    <div id="approval-settings" className={`icon-sidebar ${isSysAdmin ? '' : 'hidden'} ${location.pathname === '/approvals' ? 'active' : ''}`}>
+                    <div id="approval-settings" className={`icon-sidebar ${userRole=== '"SYS_ADMIN"' ? '' : 'hidden'} ${location.pathname === '/approvals' ? 'active' : ''}`}>
                         <BsFillCheckSquareFill />
                     </div>
                 </Link>
                 <Link to={"/manage-organizations"}>
-                    <div id="org-settings" className={`icon-sidebar ${isSysAdmin ? '' : 'hidden'} ${location.pathname === '/manage-organizations' ? 'active' : ''}`}>
+                    <div id="org-settings" className={`icon-sidebar ${userRole=== '"SYS_ADMIN"' ? '' : 'hidden'} ${location.pathname === '/manage-organizations' ? 'active' : ''}`}>
                         <FaGear />
                     </div>
                 </Link>

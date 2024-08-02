@@ -1,17 +1,43 @@
 import './style.css';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import HomeLayout from '../BuilderComponents/HomeLayout';
 import InnerHomeLayout from '../BuilderComponents/InnerHomeLayout';
 import SettingsSidebar from '../BuilderComponents/SettingsSidebar';
 import SubheaderRegular from '../BuilderComponents/SubheaderRegular';
+import { fetchUserAttributes, getCurrentUser } from 'aws-amplify/auth';
 
 function Approvals() {
 
     const [approvals, setApprovals] = useState([]);
-    const location = useLocation();
-    const userData = location.state.userData;
-    const userAtts = location.state.userAtts;
+
+    const [userData, setUserData] = useState({
+        username: "Jane Doe",
+        userID: "0"
+    });
+
+    const [userAtts, setUserAtts] = useState();
+
+    // Get the stuff from Cognito 
+    useEffect(() => {
+        async function fetchUser() {
+            try {
+                // temp var for getting user's data
+                const uD = await getCurrentUser();
+                setUserData(uD);
+
+                // temp var for getting user's attributes
+                const uA = await fetchUserAttributes();
+                setUserAtts(uA);
+                console.log(uA)
+                console.log(uA.email);
+                console.log(uD);
+
+            } catch (error) {
+                console.error('Error fetching user:', error);
+            }
+        }
+        fetchUser();
+    }, []);
 
     //Fetch all organizations pending approvals for the System Admin
     async function getPendingApprovals() {
@@ -109,8 +135,8 @@ function Approvals() {
                                                 <div className='list-item-email-text'>{approval[1]}</div>
                                             </div>
                                             <div className='list-item-button-wrapper'>
-                                                <button id="approve-btn" className='button-red wd-small' onClick={approveOrg(approval[0], approval[1])}>Approve</button>
-                                                <button id="deny-btn" className='button-white wd-small' onClick={denyOrg(approval[0], approval[1])}>Deny</button>
+                                        <button id="approve-btn" className='button-red wd-small' >Approve</button>
+                                                <button id="deny-btn" className='button-white wd-small' >Deny</button>
                                             </div>
                                         </div>
                                     ))}

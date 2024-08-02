@@ -40,7 +40,7 @@ function JoinOrRegister() {
                 if (uA) {
                     const permissions = await getUserPermissions(uA.email);
                     if (permissions==='"SYS_ADMIN"') {
-                        navigate('/approvals', { state: {userData, userAtts } }); // Navigate to the Approvals component
+                        navigate('/approvals'); // Navigate to the Approvals component
                     }
                 }
 
