@@ -52,7 +52,7 @@ function Approvals() {
             const json = await response.json();
             console.log(json);
 
-            setApprovals(json);
+            setApprovals(json.Requests);
         } catch (error) {
             console.error(error.message);
             return null;
@@ -135,8 +135,8 @@ function Approvals() {
                                                 <div className='list-item-email-text'>{approval[1]}</div>
                                             </div>
                                             <div className='list-item-button-wrapper'>
-                                        <button id="approve-btn" className='button-red wd-small' >Approve</button>
-                                                <button id="deny-btn" className='button-white wd-small' >Deny</button>
+                                        <button id="approve-btn" className='button-red wd-small' onClick={() => approveOrg(approval[0], approval[1])}>Approve</button>
+                                                <button id="deny-btn" className='button-white wd-small' onClick={() => denyOrg(approval[0], approval[1])}>Deny</button>
                                             </div>
                                         </div>
                                     ))}
