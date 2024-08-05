@@ -33,6 +33,7 @@ function SettingsSidebar() {
                 if (uA) {
                     const permissions = await getUserPermissions(uA.email);
                     setUserRole(permissions);
+                    console.log(userRole);
                 }
             } catch (error) {
                 console.error('Error fetching user:', error);
@@ -52,11 +53,11 @@ function SettingsSidebar() {
                 throw new Error(`Response status: ${response.status}`);
             }
 
-            const text = await response.text(); 
-            console.log(text);
+            const json = await response.json(); 
+            console.log(json.Permission);
 
             // Return the permission group text
-            return text;
+            return json.Permission;
         } catch (error) {
             console.error(error.message);
             return null;
@@ -70,12 +71,12 @@ function SettingsSidebar() {
             </div>
             <div className='icons-sidebar-wrapper'>
                 <Link to={"/approvals"}>
-                    <div id="approval-settings" className={`icon-sidebar ${userRole=== '"SYS_ADMIN"' ? '' : 'hidden'} ${location.pathname === '/approvals' ? 'active' : ''}`}>
+                    <div id="approval-settings" className={`icon-sidebar ${userRole=== "SYS_ADMIN" ? '' : 'hidden'} ${location.pathname === '/approvals' ? 'active' : ''}`}>
                         <BsFillCheckSquareFill />
                     </div>
                 </Link>
                 <Link to={"/manage-organizations"}>
-                    <div id="org-settings" className={`icon-sidebar ${userRole=== '"SYS_ADMIN"' ? '' : 'hidden'} ${location.pathname === '/manage-organizations' ? 'active' : ''}`}>
+                    <div id="org-settings" className={`icon-sidebar ${userRole=== "SYS_ADMIN" ? '' : 'hidden'} ${location.pathname === '/manage-organizations' ? 'active' : ''}`}>
                         <FaGear />
                     </div>
                 </Link>

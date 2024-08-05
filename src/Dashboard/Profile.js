@@ -24,6 +24,21 @@ function Profile() {
         navigate("/");
     };
 
+    const getUserRoleString = (role) => {
+        switch (role) {
+            case "SYS_ADMIN":
+                return "System Admin";
+            case "ORG_ADMIN":
+                return "Organization Admin"
+            case "ASSIST_ADMIN'":
+                return "Assistant Admin"
+            case "MEMBER":
+                return "Member";
+            case "NONE":
+                return "Unregistered";
+        }
+    }
+
     return (
         <HomeLayout>
             <body id='charcoal-background'>
@@ -50,7 +65,7 @@ function Profile() {
                                     </div>
                                     <div className='profile-field'>
                                         <div className='input-field-label charcoal'>User Role</div>
-                                        <div className='input-field charcoal'>{userRole}</div>
+                                        <div className='input-field charcoal'>{getUserRoleString(userRole)}</div>
                                     </div>
                                     <div className='profile-field'>
                                         <button className='button-white-outline' onClick={handleLogOutClick}>Sign out</button>

@@ -39,7 +39,7 @@ function JoinOrRegister() {
                 //check if the current user is a system admin and navigate to the approvals page instead
                 if (uA) {
                     const permissions = await getUserPermissions(uA.email);
-                    if (permissions==='"SYS_ADMIN"') {
+                    if (permissions==="SYS_ADMIN") {
                         navigate('/approvals'); // Navigate to the Approvals component
                     }
                 }
@@ -63,11 +63,11 @@ function JoinOrRegister() {
                 throw new Error(`Response status: ${response.status}`);
             }
 
-            const text = await response.text(); 
-            console.log(text);
+            const json = await response.json(); 
+            console.log(json.Permission);
 
             // Return the permission group text
-            return text;
+            return json.Permission;
         } catch (error) {
             console.error(error.message);
             return null;
