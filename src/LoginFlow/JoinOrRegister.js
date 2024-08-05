@@ -54,7 +54,7 @@ function JoinOrRegister() {
 
     // Function to fetch user permissions for the current user. Returns a string that represents the user group
     async function getUserPermissions(email) {
-        const url = `https://7hbu1e48i3.execute-api.us-east-2.amazonaws.com/user/users/permission/${email}/1`;
+        const url = `https://7hbu1e48i3.execute-api.us-east-2.amazonaws.com/user/permission/${email}`;
 
         try {
             //fetch the user's permission group
@@ -76,7 +76,7 @@ function JoinOrRegister() {
 
     const handleLogOutClick = () => {
         console.log("Log out");
-        //signOut();
+        signOut();
     };
 
     return (
@@ -90,7 +90,7 @@ function JoinOrRegister() {
                         </div>
                         <Link to={{ pathname: "/join" }} state={{ userData, userAtts }}><div className='button-white-outline wd-large spacing-small'  >Join an existing group</div> </Link>
                         <Link to={{ pathname: "/register" }} state={{ userData, userAtts }}><div className='button-white-outline wd-large spacing-small'>Register a new group</div> </Link>
-                        <button className='button-white-outline wd-large spacing-small' onClick={handleLogOutClick()} >Temp Log Out</button>
+                        <button className='button-white-outline wd-large spacing-small' onClick={handleLogOutClick} >Temp Log Out</button>
                     </div>
                 </div>
             </body>
