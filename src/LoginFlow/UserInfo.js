@@ -1,5 +1,5 @@
 import './style.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaUserCircle } from "react-icons/fa";
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -11,11 +11,36 @@ function UserInfo() {
     const location = useLocation();
     const userData = location.state.userData
     const userAtts = location.state.userAtts
+    const [userOrgName, setUserOrgName] = useState();
+    const userOrgId = userAtts["custom:OrgId"];
 
     console.log(userData)
     console.log(userAtts)
 
-    console.log(userAtts['custom:OrgID']);
+    console.log(userAtts["custom:OrgId"]);
+
+    useEffect(() => {
+        getOrgName(userOrgId);
+    }, [])
+
+    async function getOrgName(id) {
+        const url = `https://7hbu1e48i3.execute-api.us-east-2.amazonaws.com/message/org/${id}`;
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+
+            const json = await response.json();
+
+            console.log(json.Data.Name);
+            setUserOrgName(json.Data.Name);
+        } catch (error) {
+            console.error(error.message);
+            return null;
+        }
+    }
 
     return (
         <body style={{ backgroundColor: "white" }}>
@@ -29,7 +54,7 @@ function UserInfo() {
                     <div className='caption-text'>Your Group</div>
                     <div className='organization-tab'>
                         <div className='organization-logo'></div>
-                        <div className='organization-label'> {userAtts['custom:OrgID']} </div>
+                        <div className='organization-label'> {userOrgName} </div>
                     </div>
                 </div>
                 <Link to="/home"><div className='button-black wd-large spacing-large'>Join group</div></Link>
