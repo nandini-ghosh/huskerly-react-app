@@ -21,8 +21,8 @@ function Approvals() {
 
             const json = await response.json();
             console.log(json);
-
             setApprovals(json);
+
         } catch (error) {
             console.error(error.message);
             return null;
