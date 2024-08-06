@@ -1,12 +1,13 @@
 import './style.css';
 import { useState } from 'react';
-import { CiLocationArrow1 } from 'react-icons/ci';
 import { FaUserCircle } from "react-icons/fa";
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
 function UserInfo() {
+    document.body.setAttribute("id", "white-background");
+    
     const location = useLocation();
     const userData = location.state.userData
     const userAtts = location.state.userAtts
@@ -14,6 +15,7 @@ function UserInfo() {
     console.log(userData)
     console.log(userAtts)
 
+    console.log(userAtts['custom:OrgID']);
 
     return (
         <body style={{ backgroundColor: "white" }}>
@@ -30,7 +32,7 @@ function UserInfo() {
                         <div className='organization-label'> {userAtts['custom:OrgID']} </div>
                     </div>
                 </div>
-                <div className='button-black wd-large spacing-large'>Join group</div>
+                <Link to="/home"><div className='button-black wd-large spacing-large'>Join group</div></Link>
                 <Link to="/register" state={{userData, userAtts}} ><div className='link-text'>Register a new group instead</div></Link>
             </div>
         </body>

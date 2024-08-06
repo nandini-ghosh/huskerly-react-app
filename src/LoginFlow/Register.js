@@ -5,6 +5,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 function Register() {
+    document.body.setAttribute("id", "white-background");
+    
     const location = useLocation();
     const navigate = useNavigate();
     const userData = location.state?.userData

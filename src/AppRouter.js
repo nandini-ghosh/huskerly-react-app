@@ -7,6 +7,7 @@ import ConfirmationPage from "./LoginFlow/ConfirmationPage";
 import Approvals from "./SystemAdmin/Approvals";
 import ManageOrganizations from "./SystemAdmin/ManageOrganizations";
 import Home from "./Dashboard/Home";
+import Profile from "./Dashboard/Profile";
 
 function AppRouter() {
     return (
@@ -18,6 +19,9 @@ function AppRouter() {
                 <Route path="/join" element={<UserInfo />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/registration-confirmation" element={<ConfirmationPage />} />
+
+                {/* Settings */}
+                <Route path="/profile" element={<Profile />} />
 
                 {/* System Admin */}
                 <Route path="/approvals" element={<Approvals />} />

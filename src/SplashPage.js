@@ -18,21 +18,18 @@ import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 
 function SplashPage() {
-
+    document.body.removeAttribute("id", "white-background");
+    
     return (
         <div className="contents-center">
-                <img src={logo} className="splash-logo" alt="logo" />
-                <div className='splash-header'>Huskerly</div>
-                <div className='splash-body'>
-                    Collaborate with the pack.
-                </div>
-                {/* 
-            <button className='button-red' onClick={handleClick}>Get started</button> 
-            <div>{data && JSON.stringify(data)}</div>
-            */}
-                <Link to="/join-or-register">
-                    <button className='button-red wd-medium spacing-medium'>Get started</button>
-                </Link>
+            <img src={logo} className="splash-logo" alt="logo" />
+            <div className='splash-header'>Huskerly</div>
+            <div className='splash-body'>
+                Collaborate with the pack.
+            </div>
+            <Link to="/join-or-register">
+                <button className='button-red wd-medium spacing-medium'>Get started</button>
+            </Link>
         </div>
     );
 }
