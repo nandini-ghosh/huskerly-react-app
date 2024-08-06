@@ -1,8 +1,9 @@
 import './style.css';
 
 function ConfirmationPage() {
+    document.body.setAttribute("id", "white-background");
+    
     return (
-        <body id="white-background">
             <div className='contents-center'>
                 <div className='dialogue-box'>
                     <div className='dialogue-box-content'>
@@ -14,7 +15,6 @@ function ConfirmationPage() {
                     </div>
                 </div>
             </div>
-        </body>
     );
 }
 

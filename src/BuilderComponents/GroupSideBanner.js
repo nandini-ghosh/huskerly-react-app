@@ -6,7 +6,7 @@ import Collapse from './Collapsible';
 
 
 function GroupSideBanner() {
-   
+
 
     return (
         <div className='gsb-background'>
@@ -21,13 +21,13 @@ function GroupSideBanner() {
                 <Collapse collapsed={true} title={"GENERAL"} content={"#default"} >
                 </Collapse>
 
-                <button className='gsb-collapsible-team'> <GrAdd /> Add team </button>
+                <button className='gsb-collapsible-team'> <div className='gsb-icon'><GrAdd /></div> Add team </button>
             </div>
 
             <div className='gsb-content'>
                 Direct Messages
-                
-                <button className='gsb-collapsible-team'> <GrAdd /> Add colleague </button>
+
+                <button className='gsb-collapsible-team'> <div className='gsb-icon'><GrAdd /></div> Add colleague </button>
 
             </div>
         </div>

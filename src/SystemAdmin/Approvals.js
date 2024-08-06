@@ -7,6 +7,7 @@ import SubheaderRegular from '../BuilderComponents/SubheaderRegular';
 import { fetchUserAttributes, getCurrentUser } from 'aws-amplify/auth';
 
 function Approvals() {
+    document.body.setAttribute("id", "charcoal-background");
 
     const [approvals, setApprovals] = useState([]);
 
@@ -119,33 +120,31 @@ function Approvals() {
 
     return (
         <HomeLayout>
-            <body id='charcoal-background'>
-                <InnerHomeLayout>
-                    <SettingsSidebar />
-                    <div className='blockbox'>
-                        <SubheaderRegular header="Pending Approvals" channel={null}></SubheaderRegular>
-                        <div className='content-box-wrapper'>
-                            <div className='content-box'>
-                                <div className='list'>
-                                    {/* For each organization pending approval, render a component */}
-                                    {approvals.map((approval, index) => (
-                                        <div className='list-item' key={index}>
-                                            <div className='list-item-text-wrapper'>
-                                                {approval[0]}
-                                                <div className='list-item-email-text'>{approval[1]}</div>
-                                            </div>
-                                            <div className='list-item-button-wrapper'>
-                                        <button id="approve-btn" className='button-red wd-small' onClick={() => approveOrg(approval[0], approval[1])}>Approve</button>
-                                                <button id="deny-btn" className='button-white wd-small' onClick={() => denyOrg(approval[0], approval[1])}>Deny</button>
-                                            </div>
+            <InnerHomeLayout>
+                <SettingsSidebar />
+                <div className='blockbox'>
+                    <SubheaderRegular header="Pending Approvals" channel={null}></SubheaderRegular>
+                    <div className='content-box-wrapper'>
+                        <div className='content-box'>
+                            <div className='list'>
+                                {/* For each organization pending approval, render a component */}
+                                {approvals.map((approval, index) => (
+                                    <div className='list-item' key={index}>
+                                        <div className='list-item-text-wrapper'>
+                                            {approval[0]}
+                                            <div className='list-item-email-text'>{approval[1]}</div>
                                         </div>
-                                    ))}
-                                </div>
+                                        <div className='list-item-button-wrapper'>
+                                            <button id="approve-btn" className='button-red wd-small' onClick={() => approveOrg(approval[0], approval[1])}>Approve</button>
+                                            <button id="deny-btn" className='button-white wd-small' onClick={() => denyOrg(approval[0], approval[1])}>Deny</button>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
-                </InnerHomeLayout>
-            </body>
+                </div>
+            </InnerHomeLayout>
         </HomeLayout>
     );
 }
