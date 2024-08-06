@@ -7,9 +7,10 @@ import GroupSideBanner from '../BuilderComponents/GroupSideBanner';
 import Chat from '../Messaging/Chat';
 
 function Home() {
+    document.body.setAttribute("id", "charcoal-background");
+
     return (
         <HomeLayout>
-            <body id='charcoal-background'>
                 <InnerHomeLayout>
                     <SettingsSidebar />
                     <GroupSideBanner />
@@ -18,7 +19,6 @@ function Home() {
                       <Chat />
                     </div>
                 </InnerHomeLayout>
-            </body>
         </HomeLayout>
     );
 }

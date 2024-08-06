@@ -13,6 +13,8 @@ import '@aws-amplify/ui-react/styles.css';
 
 function JoinOrRegister() {
 
+    document.body.setAttribute("id", "white-background");
+
     const [userData, setUserData] = useState({
         username: "Jane Doe",
         userID: "0"
@@ -81,7 +83,7 @@ function JoinOrRegister() {
 
     return (
         <Authenticator>
-            <body id="white-background">
+            
                 <div className='dialogue-box'>
                     <div className='dialogue-box-content'>
                         <div className='dialogue-box-text'>
@@ -93,7 +95,7 @@ function JoinOrRegister() {
                         <button className='button-white-outline wd-large spacing-small' onClick={handleLogOutClick} >Temp Log Out</button>
                     </div>
                 </div>
-            </body>
+           
         </Authenticator>
     );
 }

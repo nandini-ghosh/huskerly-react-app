@@ -10,6 +10,8 @@ import './style.css';
 import '../index.css'
 
 function Profile() {
+    document.body.setAttribute("id", "charcoal-background");
+
     const location = useLocation();
     const userData = location.state.userData;
     const userAtts = location.state.userAtts;
@@ -41,41 +43,39 @@ function Profile() {
 
     return (
         <HomeLayout>
-            <body id='charcoal-background'>
-                <InnerHomeLayout>
-                    <SettingsSidebar />
-                    <div className='blockbox'>
-                        <SubheaderRegular header="My Profile" channel={null}></SubheaderRegular>
-                        <div className='content-box-wrapper'>
-                            <div className='content-box'>
-                                <div className='profile-picture-wrapper'>
-                                    <div className='profile-picture'>
+            <InnerHomeLayout>
+                <SettingsSidebar />
+                <div className='blockbox'>
+                    <SubheaderRegular header="My Profile" channel={null}></SubheaderRegular>
+                    <div className='content-box-wrapper'>
+                        <div className='content-box'>
+                            <div className='profile-picture-wrapper'>
+                                <div className='profile-picture'>
 
-                                    </div>
                                 </div>
+                            </div>
 
-                                <div className='profile-fields-wrapper'>
-                                    <div className='profile-field'>
-                                        <div className='input-field-label charcoal'>Username</div>
-                                        <input id="username" className='input-field charcoal' value={userAtts.name}></input>
-                                    </div>
-                                    <div className='profile-field'>
-                                        <div className='input-field-label charcoal'><div className="input-field-label-icon"><FaLock /></div>Email address</div>
-                                        <input id="email" className='input-field charcoal' value={userAtts.email} disabled></input>
-                                    </div>
-                                    <div className='profile-field'>
-                                        <div className='input-field-label charcoal'>User Role</div>
-                                        <div className='input-field charcoal'>{getUserRoleString(userRole)}</div>
-                                    </div>
-                                    <div className='profile-field'>
-                                        <button className='button-white-outline' onClick={handleLogOutClick}>Sign out</button>
-                                    </div>
+                            <div className='profile-fields-wrapper'>
+                                <div className='profile-field'>
+                                    <div className='input-field-label charcoal'>Username</div>
+                                    <input id="username" className='input-field charcoal' value={userAtts.name}></input>
+                                </div>
+                                <div className='profile-field'>
+                                    <div className='input-field-label charcoal'><div className="input-field-label-icon"><FaLock /></div>Email address</div>
+                                    <input id="email" className='input-field charcoal' value={userAtts.email} disabled></input>
+                                </div>
+                                <div className='profile-field'>
+                                    <div className='input-field-label charcoal'>User Role</div>
+                                    <div className='input-field charcoal'>{getUserRoleString(userRole)}</div>
+                                </div>
+                                <div className='profile-field'>
+                                    <button className='button-white-outline' onClick={handleLogOutClick}>Sign out</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </InnerHomeLayout>
-            </body>
+                </div>
+            </InnerHomeLayout>
         </HomeLayout>
     );
 }

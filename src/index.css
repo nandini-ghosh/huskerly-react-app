@@ -13,6 +13,14 @@ body {
   height: 100%;
 }
 
+body#white-background {
+  background-color: #ffffff !important;
+}
+
+body#charcoal-background{
+  background-color: #282828;
+}
+
 /* LAYOUT **/
 
 .flexbox {
@@ -394,6 +402,18 @@ body {
   text-align: left;
   font-size: 15px;
   font-weight: 400;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.gsb-icon-collapsible {
+  position: absolute;
+  right:0;
+}
+
+.gsb-icon {
+  margin-right: 10px;
 }
 
 .gsb-collapsed-content {

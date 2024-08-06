@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 
 function UserInfo() {
+    document.body.setAttribute("id", "white-background");
+    
     const location = useLocation();
     const userData = location.state.userData
     const userAtts = location.state.userAtts
