@@ -5,14 +5,14 @@ import { GrAdd } from "react-icons/gr";
 import Collapse from './Collapsible';
 
 
-function GroupSideBanner() {
+function GroupSideBanner({orgName, orgCount}) {
 
 
     return (
         <div className='gsb-background'>
             <div className='gsb-header'>
-                <div className='gsb-header-title'> Northeastern Event Planning Club</div>
-                <div className='gsb-header-members'>20 members</div>
+                <div className='gsb-header-title'>{orgName}</div>
+                <div className='gsb-header-members'>{orgCount} members</div>
             </div>
 
             <div className='gsb-content'>

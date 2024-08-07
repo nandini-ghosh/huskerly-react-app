@@ -18,6 +18,7 @@ function UserInfo() {
     console.log(userAtts)
 
     console.log(userAtts["custom:OrgId"]);
+    console.log(userOrgName);
 
     useEffect(() => {
         getOrgName(userOrgId);
@@ -34,8 +35,8 @@ function UserInfo() {
 
             const json = await response.json();
 
-            console.log(json.Data.Name);
-            setUserOrgName(json.Data.Name);
+            console.log(json.Data.name);
+            setUserOrgName(json.Data.name);
         } catch (error) {
             console.error(error.message);
             return null;
@@ -57,7 +58,7 @@ function UserInfo() {
                         <div className='organization-label'> {userOrgName} </div>
                     </div>
                 </div>
-                <Link to="/home"><div className='button-black wd-large spacing-large'>Join group</div></Link>
+                <Link to="/home" state={{userOrgId, userOrgName}}><div className='button-black wd-large spacing-large'>Join group</div></Link>
                 <Link to="/register" state={{userData, userAtts}} ><div className='link-text'>Register a new group instead</div></Link>
             </div>
         </body>
