@@ -10,10 +10,10 @@ function GroupSideBanner({orgName, orgCount}) {
 
     return (
         <div className='gsb-background'>
-            <div className='gsb-header'>
+            <button className='gsb-header'>
                 <div className='gsb-header-title'>{orgName}</div>
                 <div className='gsb-header-members'>{orgCount} members</div>
-            </div>
+            </button>
 
             <div className='gsb-content'>
                 Teams
