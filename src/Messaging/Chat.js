@@ -14,7 +14,7 @@ function Chat() {
     const socket = useRef(null);
     const onSocketOpen = useCallback(() => {
         //open
-        socket.current?.send(JSON.stringify({ action: 'joinChannel', channel_id : "s_1" }));
+        socket.current?.send(JSON.stringify({ action: 'joinChannel', channel_id : "s_1", user_email : "a@gmail.com" }));
     }, []);
 
     const onSocketClose = useCallback(() => {
