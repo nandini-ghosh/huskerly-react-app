@@ -21,6 +21,7 @@ function JoinOrRegister() {
     });
 
     const [userAtts, setUserAtts] = useState();
+    
     const navigate = useNavigate();
 
     // Get the stuff from Cognito 

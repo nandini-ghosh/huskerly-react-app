@@ -8,6 +8,7 @@ import Approvals from "./SystemAdmin/Approvals";
 import ManageOrganizations from "./SystemAdmin/ManageOrganizations";
 import Home from "./Dashboard/Home";
 import Profile from "./Dashboard/Profile";
+import GroupInfo from "./Dashboard/GroupInfo";
 
 function AppRouter() {
     return (
@@ -29,6 +30,9 @@ function AppRouter() {
 
                 {/* Messaging Dashboard */}
                 <Route path="/home" element={<Home />} />
+
+                {/* Group Info */}
+                <Route path="/group-info/:orgId/*" element={<GroupInfo />} />
             </Routes>
         </BrowserRouter>
     )
