@@ -4,10 +4,14 @@ import InnerHomeLayout from '../BuilderComponents/InnerHomeLayout';
 import SettingsSidebar from '../BuilderComponents/SettingsSidebar';
 import SubheaderRegular from '../BuilderComponents/SubheaderRegular';
 import GroupSideBanner from '../BuilderComponents/GroupSideBanner';
-import Chat from '../Messaging/Chat';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-function Home() {
+function EditOrg() {
     document.body.setAttribute("id", "charcoal-background");
+    const location = useLocation();
+    const userOrgId = location.state.userOrgId;
+    const userOrgName = location.state.userOrgName;
 
     return (
         <HomeLayout>
@@ -23,4 +27,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default EditOrg;
