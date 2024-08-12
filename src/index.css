@@ -22,7 +22,6 @@ body#charcoal-background{
 }
 
 /* LAYOUT **/
-
 .flexbox {
   display: flex;
 }
@@ -380,9 +379,9 @@ body#charcoal-background{
   height: fit-content;
   border: 1px solid #A4A4A4;
   border-radius: 10px;
-  padding-left: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
+  background-color: #282828;
+  text-align: left;
 }
 
 .gsb-content {
