@@ -67,7 +67,7 @@ These members approve the registration of organizations on Huskerly and manages 
 Flows are designed with specific user groups in mind (marked with their respective denotations).
 
 ### Flow 1 : Login and User Roles
-`Status: COMPLETED`
+`Status: COMPLETE`
 `USER GROUPS: All`
 
 **Feature List**
@@ -98,7 +98,7 @@ Flows are designed with specific user groups in mind (marked with their respecti
 - Fixes to User API integration 
 - Adding Messaging API integration
 
- ### Flow 4 : STATE MANAGEMENT
+ ### Flow 4 : State Management
 `Status: COMPLETE`
 `USER GROUPS: R, All`
 
