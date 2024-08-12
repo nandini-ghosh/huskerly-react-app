@@ -4,19 +4,21 @@ import InnerHomeLayout from '../BuilderComponents/InnerHomeLayout';
 import SettingsSidebar from '../BuilderComponents/SettingsSidebar';
 import SubheaderRegular from '../BuilderComponents/SubheaderRegular';
 import GroupSideBanner from '../BuilderComponents/GroupSideBanner';
-import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 function GroupInfo() {
     document.body.setAttribute("id", "charcoal-background");
-    const { orgId } = useParams();
+    const location = useLocation();
+    const orgId = location.state.orgId;
+    const orgName = location.state.orgName;
+    const orgCount = location.state.orgCount;
 
     return (
         <HomeLayout>
                 <InnerHomeLayout>
                     <SettingsSidebar />
-                    <GroupSideBanner></GroupSideBanner>
+                    <GroupSideBanner state={{orgId, orgName, orgCount}}></GroupSideBanner>
                     <div className='blockbox'>
                         <SubheaderRegular header="General" channel="default"></SubheaderRegular>
 

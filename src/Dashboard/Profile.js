@@ -16,6 +16,7 @@ function Profile() {
     const userData = location.state.userData;
     const userAtts = location.state.userAtts;
     const userRole = location.state.userRole;
+
     const navigate = useNavigate();
 
     console.log(userRole);
@@ -44,7 +45,7 @@ function Profile() {
     return (
         <HomeLayout>
             <InnerHomeLayout>
-                <SettingsSidebar />
+                <SettingsSidebar/>
                 <div className='blockbox'>
                     <SubheaderRegular header="My Profile" channel={null}></SubheaderRegular>
                     <div className='content-box-wrapper'>

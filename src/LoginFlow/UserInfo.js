@@ -1,5 +1,4 @@
 import './style.css';
-import { useState, useEffect } from 'react';
 import { FaUserCircle } from "react-icons/fa";
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -9,39 +8,11 @@ function UserInfo() {
     document.body.setAttribute("id", "white-background");
     
     const location = useLocation();
-    const userData = location.state.userData
-    const userAtts = location.state.userAtts
-    const [userOrgName, setUserOrgName] = useState();
-    const userOrgId = userAtts["custom:OrgId"];
-
-    console.log(userData)
-    console.log(userAtts)
-
-    console.log(userAtts["custom:OrgId"]);
-    console.log(userOrgName);
-
-    useEffect(() => {
-        getOrgName(userOrgId);
-    }, [])
-
-    async function getOrgName(id) {
-        const url = `https://7hbu1e48i3.execute-api.us-east-2.amazonaws.com/message/org/${id}`;
-
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`Response status: ${response.status}`);
-            }
-
-            const json = await response.json();
-
-            console.log(json.Data.name);
-            setUserOrgName(json.Data.name);
-        } catch (error) {
-            console.error(error.message);
-            return null;
-        }
-    }
+    const userData = location.state.userData;
+    const userAtts = location.state.userAtts;
+    const orgId = location.state.orgId;
+    const orgName = location.state.orgName;
+    const orgCount = location.state.orgCount;
 
     return (
         <body style={{ backgroundColor: "white" }}>
@@ -55,10 +26,10 @@ function UserInfo() {
                     <div className='caption-text'>Your Group</div>
                     <div className='organization-tab'>
                         <div className='organization-logo'></div>
-                        <div className='organization-label'> {userOrgName} </div>
+                        <div className='organization-label'> {orgName} </div>
                     </div>
                 </div>
-                <Link to="/home"><div className='button-black wd-large spacing-large'>Join group</div></Link>
+                <Link to="/home" state={{userData, userAtts, orgId, orgName, orgCount}}><div className='button-black wd-large spacing-large'>Join group</div></Link>
                 <Link to="/register" state={{userData, userAtts}} ><div className='link-text'>Register a new group instead</div></Link>
             </div>
         </body>

@@ -2,16 +2,21 @@ import '../index.css';
 import { GrAdd } from "react-icons/gr";
 import { Link } from 'react-router-dom';
 import Collapse from './Collapsible';
+import { useLocation } from 'react-router-dom';
 
 
-function GroupSideBanner({id, name, count}) {
+function GroupSideBanner() {
+    const location = useLocation();
+    const orgId = location.state.orgId;
+    const orgName = location.state.orgName;
+    const orgCount = location.state.orgCount;
 
     return (
         <div className='gsb-background'>
-            <Link key={id} to={`/group-info/${id}`}>
+            <Link key={orgId} to={`/group-info/${orgId}`} state={{orgId, orgName, orgCount}}>
                 <button className='gsb-header'>
-                    <div className='gsb-header-title'>{name}</div>
-                    <div className='gsb-header-members'>{count} members</div>
+                    <div className='gsb-header-title'>{orgName}</div>
+                    <div className='gsb-header-members'>{orgCount} members</div>
                 </button>
             </Link>
 

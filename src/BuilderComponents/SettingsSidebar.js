@@ -2,6 +2,7 @@ import '../index.css';
 import { FaUserCircle } from "react-icons/fa";
 import { BsFillCheckSquareFill } from "react-icons/bs";
 import { FaGear } from "react-icons/fa6";
+import { FaHome } from "react-icons/fa";
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchUserAttributes, getCurrentUser } from 'aws-amplify/auth';
@@ -53,7 +54,7 @@ function SettingsSidebar() {
                 throw new Error(`Response status: ${response.status}`);
             }
 
-            const json = await response.json(); 
+            const json = await response.json();
             console.log(json.Permission);
 
             // Return the permission group text
@@ -67,16 +68,21 @@ function SettingsSidebar() {
     return (
         <div className="settings-sidebar">
             <div className='user-sidebar-wrapper'>
-                <Link to="/profile" state={{userData, userAtts, userRole}}><div id="user-settings" className={`icon-sidebar white ${location.pathname === '/profile' ? 'active' : ''}`}><FaUserCircle /></div></Link>
+                <Link to="/profile" state={{ userData, userAtts, userRole }}><div id="user-settings" className={`icon-sidebar white ${location.pathname === '/profile' ? 'active' : ''}`}><FaUserCircle /></div></Link>
             </div>
             <div className='icons-sidebar-wrapper'>
+                {/* <Link to={"/home"} state={{userData, userAtts, orgId, orgName, orgCount}}>
+                    <div id="home-settings" className={`icon-sidebar ${userRole === "SYS_ADMIN" ? 'hidden' : ''} ${location.pathname === '/home' ? 'active' : ''}`}>
+                        <FaHome />
+                    </div>
+                </Link> */}
                 <Link to={"/approvals"}>
-                    <div id="approval-settings" className={`icon-sidebar ${userRole=== "SYS_ADMIN" ? '' : 'hidden'} ${location.pathname === '/approvals' ? 'active' : ''}`}>
+                    <div id="approval-settings" className={`icon-sidebar ${userRole === "SYS_ADMIN" ? '' : 'hidden'} ${location.pathname === '/approvals' ? 'active' : ''}`}>
                         <BsFillCheckSquareFill />
                     </div>
                 </Link>
                 <Link to={"/manage-organizations"}>
-                    <div id="org-settings" className={`icon-sidebar ${userRole=== "SYS_ADMIN" ? '' : 'hidden'} ${location.pathname === '/manage-organizations' ? 'active' : ''}`}>
+                    <div id="org-settings" className={`icon-sidebar ${userRole === "SYS_ADMIN" ? '' : 'hidden'} ${location.pathname === '/manage-organizations' ? 'active' : ''}`}>
                         <FaGear />
                     </div>
                 </Link>
