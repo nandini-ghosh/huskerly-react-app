@@ -21,7 +21,7 @@ function Chat() {
         socket.current?.send(JSON.stringify({
             action: 'joinChannel',
             channel_id : "default",
-            user_email : "userAtts.name"
+            user_email : userAtts.name
             }));
         
 
