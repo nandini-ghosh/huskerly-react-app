@@ -21,37 +21,65 @@ function JoinOrRegister() {
     });
 
     const [userAtts, setUserAtts] = useState();
+
+    const [orgCount, setOrgCount] = useState();
+    const [orgName, setOrgName] = useState();
+    const [orgId, setOrgId] = useState();
+    
     const navigate = useNavigate();
 
     // Get the stuff from Cognito 
     useEffect(() => {
-        async function fetchUser() {
+        async function fetchData() {
             try {
-                // temp var for getting user's data
+                // Fetch user data
                 const uD = await getCurrentUser();
                 setUserData(uD);
 
-                // temp var for getting user's attributes
+                // Fetch user attributes
                 const uA = await fetchUserAttributes();
                 setUserAtts(uA);
-                console.log(uA)
+                setOrgId(uA["custom:OrgId"]);
+                
+                // Log the user attributes and ID for debugging
+                console.log(uA);
                 console.log(uA.email);
                 console.log(uD);
 
-                //check if the current user is a system admin and navigate to the approvals page instead
+                // Fetch organization info if orgId is available
+                if (uA["custom:OrgId"]) {
+                    const url = `https://7hbu1e48i3.execute-api.us-east-2.amazonaws.com/message/org/${uA["custom:OrgId"]}`;
+                    const response = await fetch(url);
+
+                    if (!response.ok) {
+                        throw new Error(`Response status: ${response.status}`);
+                    }
+
+                    const json = await response.json();
+                    setOrgCount(json.Data.user_count);
+                    setOrgName(json.Data.name);
+                    
+                    // Log the organization details for debugging
+                    console.log(json.Data.name);
+                    console.log(json.Data.user_count);
+                }
+
+                // Check user permissions
                 if (uA) {
                     const permissions = await getUserPermissions(uA.email);
-                    if (permissions==="SYS_ADMIN") {
-                        navigate('/approvals'); // Navigate to the Approvals component
+                    console.log(permissions);
+                    if (permissions === "SYS_ADMIN") {
+                        navigate('/approvals');
                     }
                 }
 
             } catch (error) {
-                console.error('Error fetching user:', error);
+                console.error('Error fetching data:', error);
             }
         }
-        fetchUser();
-    }, []);
+
+        fetchData();
+    }, [navigate]);
 
 
     // Function to fetch user permissions for the current user. Returns a string that represents the user group
@@ -76,11 +104,6 @@ function JoinOrRegister() {
         }
     }
 
-    const handleLogOutClick = () => {
-        console.log("Log out");
-        signOut();
-    };
-
     return (
         <Authenticator>
             
@@ -90,9 +113,8 @@ function JoinOrRegister() {
                             Welcome to Huskerly!
                             <br></br>What would you like to do today?
                         </div>
-                        <Link to={{ pathname: "/join" }} state={{ userData, userAtts }}><div className='button-white-outline wd-large spacing-small'  >Join an existing group</div> </Link>
+                        <Link to={{ pathname: "/join" }} state={{ userData, userAtts, orgId, orgName, orgCount }}><div className='button-white-outline wd-large spacing-small'  >Join an existing group</div> </Link>
                         <Link to={{ pathname: "/register" }} state={{ userData, userAtts }}><div className='button-white-outline wd-large spacing-small'>Register a new group</div> </Link>
-                        <button className='button-white-outline wd-large spacing-small' onClick={handleLogOutClick} >Temp Log Out</button>
                     </div>
                 </div>
            

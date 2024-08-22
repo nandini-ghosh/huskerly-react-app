@@ -1,19 +1,24 @@
 import '../index.css';
-import { useState } from 'react'
 import { GrAdd } from "react-icons/gr";
-
+import { Link } from 'react-router-dom';
 import Collapse from './Collapsible';
+import { useLocation } from 'react-router-dom';
 
 
 function GroupSideBanner() {
-
+    const location = useLocation();
+    const orgId = location.state.orgId;
+    const orgName = location.state.orgName;
+    const orgCount = location.state.orgCount;
 
     return (
         <div className='gsb-background'>
-            <div className='gsb-header'>
-                <div className='gsb-header-title'> Northeastern Event Planning Club</div>
-                <div className='gsb-header-members'>20 members</div>
-            </div>
+            <Link key={orgId} to={`/group-info/${orgId}`} state={{orgId, orgName, orgCount}}>
+                <button className='gsb-header'>
+                    <div className='gsb-header-title'>{orgName}</div>
+                    <div className='gsb-header-members'>{orgCount} members</div>
+                </button>
+            </Link>
 
             <div className='gsb-content'>
                 Teams
