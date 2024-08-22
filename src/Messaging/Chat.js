@@ -14,11 +14,16 @@ function Chat() {
     const socket = useRef(null);
     const onSocketOpen = useCallback(() => {
         //open
+
         socket.current?.send(JSON.stringify({
             action: 'joinChannel',
-            channel_id : "s_1",
-            user_email : "a@gmail.com"
-         }));
+            channel_id : "default",
+            user_email : "User"
+            }));
+        
+
+        
+         
     }, []);
 
     const onSocketClose = useCallback(() => {
@@ -30,6 +35,13 @@ function Chat() {
     const onSocketRecieve = useCallback((event) => {
         console.log("recieved");
         console.log(event.data);
+        console.log(event.data.substring(7, 19))
+        console.log(event.data.substring(58,event.data.length-3))
+        if (event.data.substring(7, 19) === "connectionId") {
+            let cleanedData = event.data.substring(58,event.data.length-3);
+            setMessages(messages => [...messages, cleanedData.split("\", \"")]);
+            return
+        }
         if(event.data !== "{\"status\":200}") {
             let cleanedData = event.data.substring(2,event.data.length-2);
             setMessages(messages => [...messages, cleanedData.split("\", \"")]);
@@ -77,7 +89,7 @@ function Chat() {
                                 <div className='message-text'>
                                     {message[1]}
                                 </div>
-                                <button id='replies-btn' className='message-replies'>Replies? no</button>
+                                {/* <button id='replies-btn' className='message-replies'>Replies? no</button> */}
                             </div>
                         </div>)
                     ))
