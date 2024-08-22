@@ -67,7 +67,7 @@ These members approve the registration of organizations on Huskerly and manages 
 Flows are designed with specific user groups in mind (marked with their respective denotations).
 
 ### Flow 1 : Login and User Roles
-`Status: IN PROGRESS`
+`Status: COMPLETE`
 `USER GROUPS: All`
 
 **Feature List**
@@ -79,7 +79,7 @@ Flows are designed with specific user groups in mind (marked with their respecti
 - View user's organization
 
 ### Flow 2 : Registration and Initial Messaging App
-`Status: IN PROGRESS`
+`Status: COMPLETE`
 `USER GROUPS: S, All`
 
 **Feature List**
@@ -87,3 +87,22 @@ Flows are designed with specific user groups in mind (marked with their respecti
 - Viewing approval requests
 - Messaging a user
 - Viewing a message from a user
+
+ ### Flow 3 : Websocket Chat App
+`Status: COMPLETE`
+`USER GROUPS: All`
+
+**Feature List**
+- Enabling real-time chatting between users
+- Logging and displaying chat history
+- Fixes to User API integration 
+- Adding Messaging API integration
+
+ ### Flow 4 : State Management
+`Status: COMPLETE`
+`USER GROUPS: R, All`
+
+**Feature List**
+- Fixing bugs and state handling to ensure a smoother experience
+- Routing to unique organization pages
+- Adding a home button in the sidebar
