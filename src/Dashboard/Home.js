@@ -23,7 +23,7 @@ function Home() {
                     <GroupSideBanner state={{orgId, orgName, orgCount}}></GroupSideBanner>
                     <div className='blockbox'>
                         <SubheaderRegular header="General" channel="default"></SubheaderRegular>
-                      <Chat />
+                      <Chat state={{userData, userAtts}}/>
                     </div>
                 </InnerHomeLayout>
         </HomeLayout>

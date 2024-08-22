@@ -3,13 +3,16 @@ import './style.css';
 import TypingBox from '../Messaging/TypingBox';
 import { FaUserCircle } from 'react-icons/fa';
 import React, { useState, useEffect, useCallback, useRef } from 'react'
+import { useLocation } from 'react-router-dom';
 
 const URL = "wss://4pol8l45nh.execute-api.us-east-2.amazonaws.com/v1/"
 
 
 function Chat() {
     const [messages, setMessages] = useState([]);
-
+    const location = useLocation();
+    const userData = location.state.userData;
+    const userAtts = location.state.userAtts;
 
     const socket = useRef(null);
     const onSocketOpen = useCallback(() => {
@@ -18,7 +21,7 @@ function Chat() {
         socket.current?.send(JSON.stringify({
             action: 'joinChannel',
             channel_id : "default",
-            user_email : "User"
+            user_email : "userAtts.name"
             }));
         
 
